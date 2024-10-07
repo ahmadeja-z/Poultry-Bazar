@@ -4,10 +4,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:poultry/app/resources/languages/languages.dart';
 import 'package:poultry/app/resources/routes/app_routes.dart';
+import 'package:poultry/app/resources/routes/routes_name.dart';
 import 'package:poultry/app/screen/practise.dart';
+import 'package:poultry/app/screen/starting_screens/onboarding_screen.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
-import 'app/screen/nav_bar_screen.dart';
+import 'app/screen/navbar_screens/media_view/media_tabs.dart';
+import 'app/screen/navbar_screens/nav_bar_screen.dart';
+import 'app/screen/navbar_screens/profile_view/profile_view.dart';
 import 'app/screen/starting_screens/splash_screen.dart';
 
 void main() {
@@ -34,23 +38,23 @@ class MyApp extends StatelessWidget {
             primarySwatch: Colors.blue,
             textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
           ),
+          // initialRoute:ScreenName.splashScreen,
+          // getPages: AppRoutes.appRoute(),
           translations: Languages(),
           locale: const Locale('en','US'),
           home: ResponsiveBuilder(
             builder: (context, sizingInformation) {
-              // Determine design size based on the screen type
               Size designSize = getDesignSize(sizingInformation);
-              // Initialize ScreenUtil with the determined design size
               ScreenUtil.init(
                 context,
                 designSize: designSize,
               );
 
-              return PractiseHomePage(); // Placeholder for the home widget; replace with actual widget
+              return ProfileView();
             },
           ),
           // Set your routes here
-          // getPages: AppRoutes.appRoute(),
+
         );
       },
     );

@@ -18,30 +18,33 @@ class GradientButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-margin: EdgeInsets.symmetric(horizontal: 50.w),
-      padding: EdgeInsets.symmetric(vertical: 7.h),
-      decoration: BoxDecoration(
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+      margin: EdgeInsets.symmetric(horizontal: 50.w),
+        padding: EdgeInsets.symmetric(vertical: 9.h),
+        decoration: BoxDecoration(
 
-        borderRadius: BorderRadius.circular(10.r),
-        gradient: LinearGradient(
-            colors: gradientColor,
-            begin: Alignment.bottomCenter,
-            end: Alignment.topCenter),
-      ),
-      child: Center(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              buttonTitle,
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontFamily: AppFonts.poppins,
-                  fontSize: 15.sp,
-                  color: Colors.white),
-            ),
-          ],
+          borderRadius: BorderRadius.circular(10.r),
+          gradient: LinearGradient(
+              colors: gradientColor,
+              begin: Alignment.bottomCenter,
+              end: Alignment.topCenter),
+        ),
+        child: Center(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                buttonTitle,
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontFamily: AppFonts.poppins,
+                    fontSize: 15.sp,
+                    color: Colors.white),
+              ),
+            ],
+          ),
         ),
       ),
     );

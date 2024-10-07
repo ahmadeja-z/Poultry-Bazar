@@ -75,17 +75,16 @@
 //
 // }
 //
-import 'dart:math';
 import 'dart:async'; // Import Timer for repeating the animation
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_common/get_reset.dart';
 import 'package:poultry/app/resources/app_colors/app_colors.dart';
 import 'package:poultry/app/resources/assets/app_fonts.dart';
 import 'package:poultry/app/resources/assets/app_icons.dart';
 import 'package:poultry/app/resources/assets/app_images.dart';
 import '../../resources/components/gradient_button.dart';
+import '../navbar_screens/nav_bar_screen.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
@@ -102,7 +101,7 @@ class OnboardingScreen extends StatelessWidget {
             SizedBox(height: 150.h),
             Center(
               child: SizedBox(
-                height: 350.h,
+                height: 340.h,
                 width: 350.w,
                 child: Center(
                   child: Stack(
@@ -118,22 +117,22 @@ class OnboardingScreen extends StatelessWidget {
                           scale: 1.1,
                         ),
                       ),
-                      BouncingIcon(
+                      const BouncingIcon(
                         top: 55,
                         left: 10,
                         icon: AppIcons.marketRatesIcon,
                       ),
-                      BouncingIcon(
+                      const BouncingIcon(
                         top: 0,
                         left: 85,
                         icon: AppIcons.posIcon,
                       ),
-                      BouncingIcon(
+                      const BouncingIcon(
                         top: 0,
                         right: 85,
                         icon: AppIcons.flockManagementIcon,
                       ),
-                      BouncingIcon(
+                      const BouncingIcon(
                         top: 55,
                         right: 10,
                         icon: AppIcons.eCommenceIcon,
@@ -151,18 +150,22 @@ class OnboardingScreen extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   color: AppColors.black),
             ),
-            Text(
-              'description'.tr,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                  fontFamily: AppFonts.poppins,
-                  fontSize: 12.sp,
-                  color: AppColors.grey),
+            ConstrainedBox(constraints: BoxConstraints(maxWidth: 200.w),
+              child: Text(
+                'description'.tr,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    fontFamily: AppFonts.poppins,
+                    fontSize: 12.sp,
+                    color: AppColors.grey),
+              ),
             ),
             SizedBox(height: 150.h),
             GradientButton(
               buttonTitle: 'Let\'s Start',
-              onTap: () {},
+              onTap: () {Get.to(()=>NavbarScreen(),transition: Transition.fade, duration: const Duration(milliseconds: 600)
+              );
+               },
               gradientColor: AppColors.primaryGradient,
             ),
           ],
@@ -179,15 +182,17 @@ class BouncingIcon extends StatefulWidget {
   final String icon;
 
   const BouncingIcon({
-    Key? key,
+    super.key,
     required this.top,
     this.left,
     this.right,
     required this.icon,
-  }) : super(key: key);
+  });
 
   @override
-  _BouncingIconState createState() => _BouncingIconState();
+  _BouncingIconState createState() {
+    return _BouncingIconState();
+  }
 }
 
 class _BouncingIconState extends State<BouncingIcon>
@@ -208,7 +213,7 @@ class _BouncingIconState extends State<BouncingIcon>
     _bounceAnimation = Tween<double>(begin: 0, end: 1).animate(
       CurvedAnimation(
         parent: _controller,
-        curve: Curves.bounceOut, // Bounce effect
+        curve: Curves.easeInToLinear, // Bounce effect
       ),
     );
 

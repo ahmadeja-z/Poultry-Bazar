@@ -3,7 +3,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
-import '../screen/nav_bar_screen.dart';
+import '../screen/navbar_screens/nav_bar_screen.dart';
 
 class NavController extends GetxController {
   var selectedIndex = 0.obs;
