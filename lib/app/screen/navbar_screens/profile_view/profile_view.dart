@@ -7,6 +7,9 @@ import 'package:poultry/app/resources/app_colors/app_colors.dart';
 import 'package:poultry/app/resources/assets/app_fonts.dart';
 import 'package:poultry/app/resources/components/custom_navbar.dart';
 import 'package:poultry/app/resources/components/profile_background_container_image.dart';
+import 'package:poultry/app/screen/navbar_screens/profile_view/profile_info_options/about_us_profile.dart';
+import 'package:poultry/app/screen/navbar_screens/profile_view/profile_info_options/faqs_profile.dart';
+import 'package:poultry/app/screen/navbar_screens/profile_view/profile_info_options/notification_setting_profile.dart';
 
 class ProfileView extends StatelessWidget {
   const ProfileView({super.key});
@@ -14,22 +17,23 @@ class ProfileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
       body: Stack(
-
-
+        alignment: Alignment.topCenter,
         children: [
+          SizedBox(
+            height:double.infinity,
+          ),
           ProfileBackgroundContainerImage(
               imageUrl:
                   'https://plus.unsplash.com/premium_photo-1671656349322-41de944d259b?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
               name: 'Name Here',
               mail: 'email123@gmail.com'),
           Positioned(
-            
+            top: 150.h,
             child: Container(
-              height: 488.h,
-              width: 270.w,
-              padding: EdgeInsets.only(top: 20.h, left: 20.w, right: 20.w),
+              width: 280.w,
+              padding: EdgeInsets.only(
+                  top: 20.h, left: 20.w, right: 20.w, bottom: 20.h),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.r),
                   color: AppColors.white,
@@ -56,7 +60,8 @@ class ProfileView extends StatelessWidget {
                           color: AppColors.grey,
                         ),
                         text: 'notification',
-                        onTap: () {}),
+                        onTap: () {Get.to(NotificationSettingProfile(),
+                        transition: Transition.fade);}),
                     Divider(color: AppColors.grey),
                     CustomRow(
                         leadingIcon: Icon(
@@ -72,7 +77,7 @@ class ProfileView extends StatelessWidget {
                           color: AppColors.grey,
                         ),
                         text: 'faqs',
-                        onTap: () {}),
+                        onTap: () {Get.to(FaqsProfile(),transition: Transition.fade);}),
                     Divider(color: AppColors.grey),
                     CustomRow(
                         leadingIcon: Icon(
@@ -80,7 +85,8 @@ class ProfileView extends StatelessWidget {
                           color: AppColors.grey,
                         ),
                         text: 'aboutUs',
-                        onTap: () {}),
+                        onTap: () {Get.to(AboutUsProfile(),
+                        transition: Transition.fade);}),
                     Divider(color: AppColors.grey),
                     CustomRow(
                         leadingIcon: Icon(

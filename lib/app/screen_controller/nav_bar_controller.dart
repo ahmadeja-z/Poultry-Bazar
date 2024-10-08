@@ -2,6 +2,7 @@
 // Controller to handle navigation bar state
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:poultry/app/screen/navbar_screens/profile_view/profile_view.dart';
 
 import '../screen/navbar_screens/nav_bar_screen.dart';
 
@@ -13,7 +14,7 @@ class NavController extends GetxController {
     DashboardPage(),
     AnalysisPage(),
     MediaPage(),
-    ProfilePage(),
+   ProfileView()
   ];
 
   void changePage(int index) {

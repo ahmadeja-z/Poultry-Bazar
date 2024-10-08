@@ -5,18 +5,21 @@ import 'package:get/get.dart';
 import 'package:poultry/app/resources/languages/languages.dart';
 import 'package:poultry/app/resources/routes/app_routes.dart';
 import 'package:poultry/app/resources/routes/routes_name.dart';
-import 'package:poultry/app/screen/practise.dart';
+import 'package:poultry/practise.dart';
 import 'package:poultry/app/screen/starting_screens/onboarding_screen.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 import 'app/screen/navbar_screens/media_view/media_tabs.dart';
 import 'app/screen/navbar_screens/nav_bar_screen.dart';
+import 'app/screen/navbar_screens/profile_view/profile_info_options/about_us_profile.dart';
+import 'app/screen/navbar_screens/profile_view/profile_info_options/faqs_profile.dart';
+import 'app/screen/navbar_screens/profile_view/profile_info_options/notification_setting_profile.dart';
 import 'app/screen/navbar_screens/profile_view/profile_view.dart';
 import 'app/screen/starting_screens/splash_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
+  // SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
   runApp(MyApp());}
 
 class MyApp extends StatelessWidget {
@@ -50,11 +53,9 @@ class MyApp extends StatelessWidget {
                 designSize: designSize,
               );
 
-              return ProfileView();
+              return SplashScreen();
             },
           ),
-          // Set your routes here
-
         );
       },
     );

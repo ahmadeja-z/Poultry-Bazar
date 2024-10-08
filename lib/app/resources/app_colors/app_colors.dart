@@ -4,6 +4,7 @@ class AppColors {
   //Application Special Colors
   static const Color primaryYellow=Color(0xFFFE8A29);
   static const Color secondaryLightYellow=Color(0xFFFCB376);
+  static const Color expandableBackground=Color(0xFFE2E2E280);
   static List<Color> primaryGradient=[primaryYellow,secondaryLightYellow];
 
   // Common Colors

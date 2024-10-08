@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:poultry/app/resources/assets/app_fonts.dart';
@@ -7,9 +5,13 @@ import 'package:poultry/app/resources/assets/app_fonts.dart';
 class GradientButton extends StatelessWidget {
   const GradientButton({
     super.key,
-    required this.buttonTitle, required this.onTap, required this.gradientColor, this.height=40,  this.width=255,
-
+    required this.buttonTitle,
+    required this.onTap,
+    required this.gradientColor,
+    this.height = 40,
+    this.width = 255,
   });
+
   final String buttonTitle;
   final VoidCallback onTap;
   final List<Color> gradientColor;
@@ -20,30 +22,37 @@ class GradientButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: Container(
-      margin: EdgeInsets.symmetric(horizontal: 50.w),
-        padding: EdgeInsets.symmetric(vertical: 9.h),
-        decoration: BoxDecoration(
-
-          borderRadius: BorderRadius.circular(10.r),
-          gradient: LinearGradient(
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(20.r), // Increased border radius
+        child: Container(
+          margin: EdgeInsets.symmetric(horizontal: 10.w),
+          height: height.h, // Set the height using ScreenUtil
+          width: width.w, // Set the width using ScreenUtil
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
               colors: gradientColor,
               begin: Alignment.bottomCenter,
-              end: Alignment.topCenter),
-        ),
-        child: Center(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                buttonTitle,
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontFamily: AppFonts.poppins,
-                    fontSize: 15.sp,
-                    color: Colors.white),
+              end: Alignment.topCenter,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.2), // Shadow color
+                offset: Offset(0, 2), // Offset for the shadow
+                blurRadius: 4, // Blur radius of the shadow
+                spreadRadius: 1, // Spread radius of the shadow
               ),
             ],
+          ),
+          child: Center(
+            child: Text(
+              buttonTitle,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontFamily: AppFonts.poppins,
+                fontSize: 15.sp,
+                color: Colors.white,
+              ),
+            ),
           ),
         ),
       ),

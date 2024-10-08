@@ -17,7 +17,7 @@ class InfoHeaderBackground extends StatelessWidget {
       children: [
         const BackgroundContainer(),
         Positioned(
-          top: 25.h,
+          top: 30.h,
           left: 25.w,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -32,7 +32,7 @@ class InfoHeaderBackground extends StatelessWidget {
                     size: 30,
                   )),
               SizedBox(
-                width: 90.w,
+                width: 95.w,
               ),
               Text(
                 title,
@@ -55,7 +55,7 @@ class BackgroundContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 175.h,
+      height: 205.h,
       decoration: BoxDecoration(
         gradient: LinearGradient(
             colors: AppColors.primaryGradient,
@@ -66,7 +66,7 @@ class BackgroundContainer extends StatelessWidget {
         alignment: Alignment.bottomRight,
         child: Image.asset(
           AppIcons.henIcon,
-          scale: 2.3,
+          scale: 1.9,
         ),
       ),
     );
@@ -84,7 +84,7 @@ final String mail;
       children: [
         BackgroundContainer(), // Assuming you have this as a background widget
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+          padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 30.h),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [

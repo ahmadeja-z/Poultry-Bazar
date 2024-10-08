@@ -114,14 +114,3 @@ class MediaPage extends StatelessWidget {
   }
 }
 
-class ProfilePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: Text(
-        'Profile Page',
-        style: TextStyle(fontSize: 24, color: Colors.black),
-      ),
-    );
-  }
-}
