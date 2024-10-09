@@ -44,49 +44,51 @@ class FaqsProfile extends StatelessWidget {
                   shrinkWrap: true
                   ,
                   children: [
-                    CustomExpansionTile(question: 'question1', answer: 'answer1'),
+                    const CustomExpansionTile(question: 'question1', answer: 'answer1'),
                     SizedBox(
                       height: 13.h,
                     ),
-                    CustomExpansionTile(question: 'question2', answer: 'answer2'),
+                    const CustomExpansionTile(question: 'question2', answer: 'answer2'),
                     SizedBox(
                       height: 13.h,
                     ),
-                    CustomExpansionTile(question: 'question3', answer: 'answer3'),
+                    const CustomExpansionTile(question: 'question3', answer: 'answer3'),
                     SizedBox(
                       height: 13.h,
                     ),
-                    CustomExpansionTile(question: 'question4', answer: 'answer4'),
+                    const CustomExpansionTile(question: 'question4', answer: 'answer4'),
                     SizedBox(
                       height: 13.h,
                     ),
-                    CustomExpansionTile(question: 'question5', answer: 'answer5'),
+                    const CustomExpansionTile(question: 'question5', answer: 'answer5'),
                     SizedBox(
                       height: 13.h,
                     ),
-                    CustomExpansionTile(question: 'question6', answer: 'answer6'),
+                    const CustomExpansionTile(question: 'question6', answer: 'answer6'),
                     SizedBox(
                       height: 13.h,
                     ),
-                    CustomExpansionTile(question: 'question7', answer: 'answer7'),
+                    const CustomExpansionTile(question: 'question7', answer: 'answer7'),
                     SizedBox(
                       height: 13.h,
                     ),
-                    CustomExpansionTile(question: 'question8', answer: 'answer8'),
+                    const CustomExpansionTile(question: 'question8', answer: 'answer8'),
                     SizedBox(
                       height: 13.h,
                     ),
-                    CustomExpansionTile(question: 'question9', answer: 'answer8'),
+                    const CustomExpansionTile(question: 'question9', answer: 'answer8'),
                     SizedBox(
                       height: 13.h,
                     ),
-                    CustomExpansionTile(question: 'question10', answer: 'answer10'),
+                    const CustomExpansionTile(question: 'question10', answer: 'answer10'),
                     SizedBox(
                       height: 13.h,
                     ),
                     Text('stillStuck'.tr,style: TextStyle(color: AppColors.black,fontSize: 14.sp,fontWeight: FontWeight.bold,fontFamily: AppFonts.poppins),),
                     SizedBox(height: 20.h,),
-                    GradientButton(buttonTitle: 'Send Message', onTap: (){} , gradientColor: AppColors.primaryGradient,)
+                    GradientButton(
+                      circularRadius: 20,
+                      buttonTitle: 'sendMessage', onTap: (){} , gradientColor: AppColors.primaryGradient,)
                   ],
                 ),
               ),
@@ -119,7 +121,7 @@ class CustomExpansionTile extends StatelessWidget {
       // clipBehavior: Clip.antiAlias,
       shape: OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(15.r)),
-          borderSide: BorderSide(color: Colors.transparent)),
+          borderSide: const BorderSide(color: Colors.transparent)),
       maintainState: false,
       backgroundColor: AppColors.primaryYellow.withOpacity(.4),
       title: Text(

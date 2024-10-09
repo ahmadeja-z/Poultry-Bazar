@@ -35,7 +35,7 @@ class InfoHeaderBackground extends StatelessWidget {
                 width: 95.w,
               ),
               Text(
-                title,
+                title.tr,
                 style: TextStyle(
                     fontFamily: AppFonts.poppins,
                     fontWeight: FontWeight.w600,

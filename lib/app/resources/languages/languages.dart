@@ -63,6 +63,24 @@ class Languages extends Translations {
           'question10':'Can I download or export the historical price data?',
           'answer10':'Yes, you can download or export historical price charts to analyze them further or share with others. Look for the download option in the "Historical Price Charts" section.',
           'stillStuck':'Still stuck? Help us a mail away'
+          ,
+          //Contact us Profile
+
+          'subject':'Subject:',
+          'subjectHere':'Subject Here',
+          'email':'Email:',
+          'emailHere':'Email Here',
+          'yourMessage':'Your Message:',
+          'yourMessageHere':'Your Message Here',
+          'sendMessage':'Send Message',
+          //User Profile Profile
+          'userName':'User Name:',
+          'nameHere':'Name Here',
+          'address':'Address:',
+          'addressHere':'Address Here',
+          'password':'Password',
+          'update':'Update'
+
         }
       };
 }

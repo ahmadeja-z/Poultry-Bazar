@@ -8,6 +8,7 @@ import 'package:poultry/app/resources/assets/app_fonts.dart';
 import 'package:poultry/app/resources/components/custom_navbar.dart';
 import 'package:poultry/app/resources/components/profile_background_container_image.dart';
 import 'package:poultry/app/screen/navbar_screens/profile_view/profile_info_options/about_us_profile.dart';
+import 'package:poultry/app/screen/navbar_screens/profile_view/profile_info_options/contact_us_profile.dart';
 import 'package:poultry/app/screen/navbar_screens/profile_view/profile_info_options/faqs_profile.dart';
 import 'package:poultry/app/screen/navbar_screens/profile_view/profile_info_options/notification_setting_profile.dart';
 
@@ -94,7 +95,7 @@ class ProfileView extends StatelessWidget {
                           color: AppColors.grey,
                         ),
                         text: 'contactUs',
-                        onTap: () {}),
+                        onTap: () {Get.to(ContactUsProfile(),transition: Transition.fade);}),
                     Divider(color: AppColors.grey),
                     CustomRow(
                         leadingIcon: Icon(
