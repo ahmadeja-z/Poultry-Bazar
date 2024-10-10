@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:poultry/app/screen/navbar_screens/profile_view/profile_view.dart';
 
+import '../screen/navbar_screens/media_view/media_tabs.dart';
 import '../screen/navbar_screens/nav_bar_screen.dart';
 
 class NavController extends GetxController {
@@ -13,7 +14,7 @@ class NavController extends GetxController {
   List<Widget> pages = [
     DashboardPage(),
     AnalysisPage(),
-    MediaPage(),
+    MediaTabs(),
    ProfileView()
   ];
 

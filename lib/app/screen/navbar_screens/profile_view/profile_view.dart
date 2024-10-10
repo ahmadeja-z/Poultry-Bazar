@@ -11,6 +11,7 @@ import 'package:poultry/app/screen/navbar_screens/profile_view/profile_info_opti
 import 'package:poultry/app/screen/navbar_screens/profile_view/profile_info_options/contact_us_profile.dart';
 import 'package:poultry/app/screen/navbar_screens/profile_view/profile_info_options/faqs_profile.dart';
 import 'package:poultry/app/screen/navbar_screens/profile_view/profile_info_options/notification_setting_profile.dart';
+import 'package:poultry/app/screen/navbar_screens/profile_view/profile_info_options/user_profile_profile.dart';
 
 class ProfileView extends StatelessWidget {
   const ProfileView({super.key});
@@ -32,7 +33,7 @@ class ProfileView extends StatelessWidget {
           Positioned(
             top: 150.h,
             child: Container(
-              width: 280.w,
+             width: 300.w,
               padding: EdgeInsets.only(
                   top: 20.h, left: 20.w, right: 20.w, bottom: 20.h),
               decoration: BoxDecoration(
@@ -51,7 +52,7 @@ class ProfileView extends StatelessWidget {
                           color: AppColors.grey,
                         ),
                         text: 'userProfile',
-                        onTap: () {}),
+                        onTap: () {Get.to(UserProfileProfile(),transition: Transition.fade);}),
                     Divider(
                       color: AppColors.grey,
                     ),

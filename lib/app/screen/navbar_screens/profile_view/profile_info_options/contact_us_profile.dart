@@ -77,6 +77,7 @@ class ContactUsProfile extends StatelessWidget {
                           height: 5.h,
                         ),
                         CustomProfileTextField(
+                          inputType: TextInputType.emailAddress,
                           controller: controller.emailController.value,
                           hintText: 'emailHere',
                           currentFocus: controller.emailFocus.value,

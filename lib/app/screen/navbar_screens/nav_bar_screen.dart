@@ -4,17 +4,20 @@ import 'package:get/get.dart';
 import 'package:poultry/app/resources/app_colors/app_colors.dart';
 import 'package:poultry/app/resources/assets/app_fonts.dart';
 import 'package:poultry/app/resources/components/custom_appbar.dart';
+import 'package:poultry/app/screen_controller/media_controller/blogs_media_controller.dart';
 
 import '../../screen_controller/nav_bar_controller.dart';
 
 class NavbarScreen extends StatelessWidget {
-  final NavController navController = Get.put(NavController());
+  final  navController = Get.put(NavController());
+  final  blogController = Get.put(BlogsMediaController());
 List<String> title=['Dashboard','Analysis','Media','Profile'];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       
       appBar: CustomAppBar(
+        onTrailingTap: (){blogController.changeLayout();},
           trailing: Icon(Icons.apps,color: AppColors.primaryYellow,),
           title:Obx(() => Text(title[navController.selectedIndex.value],style: TextStyle(fontSize: 17.sp,color: AppColors.primaryYellow),),)),
       body: Obx(() => navController.pages[navController.selectedIndex.value]),

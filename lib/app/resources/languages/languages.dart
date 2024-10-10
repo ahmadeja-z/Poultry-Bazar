@@ -78,7 +78,8 @@ class Languages extends Translations {
           'nameHere':'Name Here',
           'address':'Address:',
           'addressHere':'Address Here',
-          'password':'Password',
+          'password':'Password:',
+          'passwordHere':'Password Here',
           'update':'Update'
 
         }

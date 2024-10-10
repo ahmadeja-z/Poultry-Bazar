@@ -10,6 +10,7 @@ import 'package:poultry/app/screen/starting_screens/onboarding_screen.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 import 'app/screen/navbar_screens/media_view/media_tabs.dart';
+import 'app/screen/navbar_screens/media_view/tabs/blogs/blogs_media_view.dart';
 import 'app/screen/navbar_screens/nav_bar_screen.dart';
 import 'app/screen/navbar_screens/profile_view/profile_info_options/about_us_profile.dart';
 import 'app/screen/navbar_screens/profile_view/profile_info_options/contact_us_profile.dart';
@@ -21,8 +22,12 @@ import 'app/screen/starting_screens/splash_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
-  runApp(MyApp());}
+  SystemChrome.setSystemUIOverlayStyle(
+    SystemUiOverlayStyle(
+      statusBarColor: Colors.white,
+      statusBarIconBrightness: Brightness.dark,
+    ),
+  );  runApp(MyApp());}
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -55,7 +60,7 @@ class MyApp extends StatelessWidget {
                 designSize: designSize,
               );
 
-              return UserProfileProfile();
+              return SplashScreen();
             },
           ),
         );
