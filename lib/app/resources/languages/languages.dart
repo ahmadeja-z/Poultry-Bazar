@@ -66,22 +66,26 @@ class Languages extends Translations {
           ,
           //Contact us Profile
 
-          'subject':'Subject:',
+          'subject':'Subject',
           'subjectHere':'Subject Here',
-          'email':'Email:',
+          'email':'Email',
           'emailHere':'Email Here',
-          'yourMessage':'Your Message:',
+          'yourMessage':'Your Message',
           'yourMessageHere':'Your Message Here',
           'sendMessage':'Send Message',
           //User Profile Profile
-          'userName':'User Name:',
+          'userName':'User Name',
           'nameHere':'Name Here',
-          'address':'Address:',
+          'address':'Address',
           'addressHere':'Address Here',
-          'password':'Password:',
+          'password':'Password',
           'passwordHere':'Password Here',
-          'update':'Update'
-
+          'update':'Update',
+//Dashboard Screen
+        'madniUpdates':'Madni Updates',
+        'docRates':'DOC Rates',
+          'location':'Location',
+          'viewMore':'View More'
         }
       };
 }

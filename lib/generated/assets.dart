@@ -2,6 +2,7 @@
 class Assets {
   Assets._();
 
+  static const String fontsInter24ptRegular = 'assets/fonts/Inter_24pt-Regular.ttf';
   static const String fontsPoppinsRegular = 'assets/fonts/Poppins-Regular.ttf';
   static const String iconsECommenceIcon = 'assets/icons/eCommenceIcon.png';
   static const String iconsEllipse = 'assets/icons/Ellipse.png';
@@ -10,5 +11,6 @@ class Assets {
   static const String iconsMarketIcon = 'assets/icons/marketIcon.png';
   static const String iconsPosIcon = 'assets/icons/posIcon.png';
   static const String imagesLogo = 'assets/images/logo.png';
+  static const String imagesLogoIcon = 'assets/images/logo_icon.png';
 
 }

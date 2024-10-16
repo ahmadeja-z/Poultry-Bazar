@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -12,71 +13,91 @@ class AboutUsProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        alignment: Alignment.topCenter,
-        children: [
-          const SizedBox(
-            height: double.infinity,
-          ),
-          const InfoHeaderBackground(
-            title: 'About Us',
-          ),
-          Positioned(
-            top: 150.h,
-            child: Container(
-              width: 330.w,
-              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 30.h),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10.r),
-                color: AppColors.white,
-                boxShadow:const [
-                   BoxShadow(
-                    color: Colors.black12,
-                    spreadRadius: 3,
-                    blurRadius: 5,
-                  ),
-                ],
-              ),
-              child: ListView(
-                shrinkWrap: true,
-                children: [
-                  const CustomText(
-                    title: 'marketRate',
-                    about: 'marketRateDescription',
-                  ),
-                  SizedBox(
-                    height: 10.h,
-                  ),
-                  const CustomText(
-                    title: 'dailyChickenNotification',
-                    about: 'dailyChickenNotificationDescription',
-                  ),
-                  SizedBox(
-                    height: 10.h,
-                  ),
-                  const CustomText(
-                    title: 'aiPoweredSearchBoxRates',
-                    about: 'aiPoweredSearchBoxRatesDescription',
-                  ),
-                  SizedBox(
-                    height: 10.h,
-                  ),
-                  const CustomText(
-                    title: 'historicalCharts',
-                    about: 'historicalChartsDescription',
-                  ),
-                  SizedBox(
-                    height: 10.h,
-                  ),
-                  const CustomText(
-                    title: 'customizedAlert',
-                    about: 'customizedAlertDescription',
-                  ),
-                ],
-              ),
+      body: SafeArea(
+        child: Stack(
+          alignment: Alignment.topCenter,
+          children: [
+        SizedBox(height: double.infinity,),
+             ScreenBackGround(
+              title: 'About Us',
             ),
-          ),
-        ],
+            Column(
+              children: [
+                SizedBox(height: 23.h,),
+                Row(
+                  children: [
+                    SizedBox(width: 10.h,),
+                    IconButton(
+                        splashColor: AppColors.secondaryLightYellow.withOpacity(0.5), // Color of the splash effect
+                        highlightColor: AppColors.primaryYellow.withOpacity(0.3),    // Color when the widget is pressed
+        
+                        onPressed: (){Get.back();}, icon: Icon(
+                      CupertinoIcons.back,
+                      color: AppColors.white,
+                      size: 30,
+                    )),
+                  ],
+                ),
+                SizedBox(height: 72.h,),
+                Container(
+                  // height: Get.height*7,
+                  width: 343.w,
+                  padding: EdgeInsets.symmetric(horizontal: 20.w,vertical: 10 ),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.r),
+                    color: AppColors.white,
+                    boxShadow:const [
+                      BoxShadow(
+                        color: Colors.black12,
+                        spreadRadius: 3,
+                        blurRadius: 5,
+                      ),
+                    ],
+                  ),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        const CustomText(
+                          title: 'marketRate',
+                          about: 'marketRateDescription',
+                        ),
+                        SizedBox(
+                          height: 10.h,
+                        ),
+                        const CustomText(
+                          title: 'dailyChickenNotification',
+                          about: 'dailyChickenNotificationDescription',
+                        ),
+                        SizedBox(
+                          height: 10.h,
+                        ),
+                        const CustomText(
+                          title: 'aiPoweredSearchBoxRates',
+                          about: 'aiPoweredSearchBoxRatesDescription',
+                        ),
+                        SizedBox(
+                          height: 10.h,
+                        ),
+                        const CustomText(
+                          title: 'historicalCharts',
+                          about: 'historicalChartsDescription',
+                        ),
+                        SizedBox(
+                          height: 10.h,
+                        ),
+                        const CustomText(
+                          title: 'customizedAlert',
+                          about: 'customizedAlertDescription',
+                        ),
+                      ],
+                    ),
+                  ),
+                )
+              ],
+            )
+          ],
+        ),
       ),
     );
   }

@@ -10,7 +10,7 @@ class GradientButton extends StatelessWidget {
     required this.buttonTitle,
     required this.onTap,
     required this.gradientColor,
-    this.height = 40,
+    this.height = 48,
     this.width = 255,
     this.circularRadius=5
   });

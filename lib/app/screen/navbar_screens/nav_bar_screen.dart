@@ -10,17 +10,14 @@ import '../../screen_controller/nav_bar_controller.dart';
 
 class NavbarScreen extends StatelessWidget {
   final  navController = Get.put(NavController());
-  final  blogController = Get.put(BlogsMediaController());
+
 List<String> title=['Dashboard','Analysis','Media','Profile'];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       
-      appBar: CustomAppBar(
-        onTrailingTap: (){blogController.changeLayout();},
-          trailing: Icon(Icons.apps,color: AppColors.primaryYellow,),
-          title:Obx(() => Text(title[navController.selectedIndex.value],style: TextStyle(fontSize: 17.sp,color: AppColors.primaryYellow),),)),
-      body: Obx(() => navController.pages[navController.selectedIndex.value]),
+      
+      body: SafeArea(child: Obx(() => navController.pages[navController.selectedIndex.value])),
       bottomNavigationBar: Obx(
             () => BottomNavigationBar(
           currentIndex: navController.selectedIndex.value,

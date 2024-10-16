@@ -9,7 +9,10 @@ import 'package:poultry/practise.dart';
 import 'package:poultry/app/screen/starting_screens/onboarding_screen.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
+import 'app/resources/app_colors/app_colors.dart';
+import 'app/screen/navbar_screens/dashboard_view/dashboard_view.dart';
 import 'app/screen/navbar_screens/media_view/media_tabs.dart';
+import 'app/screen/navbar_screens/media_view/tabs/blogs/blogs_explanation_media.dart';
 import 'app/screen/navbar_screens/media_view/tabs/blogs/blogs_media_view.dart';
 import 'app/screen/navbar_screens/nav_bar_screen.dart';
 import 'app/screen/navbar_screens/profile_view/profile_info_options/about_us_profile.dart';
@@ -24,8 +27,8 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setSystemUIOverlayStyle(
     SystemUiOverlayStyle(
-      statusBarColor: Colors.white,
-      statusBarIconBrightness: Brightness.dark,
+      statusBarColor: AppColors.secondaryLightYellow,
+      statusBarIconBrightness: Brightness.light,
     ),
   );  runApp(MyApp());}
 
@@ -36,7 +39,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // Set the fit size (Find your UI design, look at the dimensions of the device screen and fill it in, unit in dp)
     return ScreenUtilInit(
-      designSize: const Size(360, 690),
+      designSize: const Size(390, 884),
       minTextAdapt: true,
       splitScreenMode: true,
       // Use builder only if you need to use the library outside ScreenUtilInit context
@@ -52,15 +55,19 @@ class MyApp extends StatelessWidget {
           // getPages: AppRoutes.appRoute(),
           translations: Languages(),
           locale: const Locale('en','US'),
-          home: ResponsiveBuilder(
+
+          home:ResponsiveBuilder(
             builder: (context, sizingInformation) {
+              // Determine design size based on the screen type
               Size designSize = getDesignSize(sizingInformation);
+              // Initialize ScreenUtil with the determined design size
               ScreenUtil.init(
                 context,
                 designSize: designSize,
+                //  allowFontScaling: false,
               );
 
-              return SplashScreen();
+              return DashboardView();
             },
           ),
         );

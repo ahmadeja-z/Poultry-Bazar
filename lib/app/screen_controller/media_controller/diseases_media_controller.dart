@@ -1,18 +1,16 @@
 import 'package:get/get.dart';
 
 class DiseasesMediaController extends GetxController {
-
-
   // Existing dummy data for blogs
   RxList<String> hensImageUrl = <String>[
-    'https://images.pexels.com/photos/754308/pexels-photo-754308.jpeg?auto=compress&cs=tinysrgb&w=600',
-    'https://images.pexels.com/photos/1152659/pexels-photo-1152659.jpeg?auto=compress&cs=tinysrgb&w=600',
-    'https://images.pexels.com/photos/3757197/pexels-photo-3757197.jpeg?auto=compress&cs=tinysrgb&w=600',
-    'https://images.pexels.com/photos/2255459/pexels-photo-2255459.jpeg?auto=compress&cs=tinysrgb&w=600',
     'https://images.pexels.com/photos/375510/pexels-photo-375510.jpeg?auto=compress&cs=tinysrgb&w=600',
     'https://images.pexels.com/photos/1405930/pexels-photo-1405930.jpeg?auto=compress&cs=tinysrgb&w=600',
     'https://images.pexels.com/photos/1216482/pexels-photo-1216482.jpeg?auto=compress&cs=tinysrgb&w=600',
     'https://images.pexels.com/photos/195226/pexels-photo-195226.jpeg?auto=compress&cs=tinysrgb&w=600',
+    'https://images.pexels.com/photos/754308/pexels-photo-754308.jpeg?auto=compress&cs=tinysrgb&w=600',
+    'https://images.pexels.com/photos/1152659/pexels-photo-1152659.jpeg?auto=compress&cs=tinysrgb&w=600',
+    'https://images.pexels.com/photos/3757197/pexels-photo-3757197.jpeg?auto=compress&cs=tinysrgb&w=600',
+    'https://images.pexels.com/photos/2255459/pexels-photo-2255459.jpeg?auto=compress&cs=tinysrgb&w=600',
     'https://images.pexels.com/photos/58906/pexels-photo-58906.jpeg?auto=compress&cs=tinysrgb&w=600',
     'https://images.pexels.com/photos/2421023/pexels-photo-2421023.jpeg?auto=compress&cs=tinysrgb&w=600'
   ].obs;
@@ -44,7 +42,4 @@ class DiseasesMediaController extends GetxController {
     'Bacterial infections can pose serious risks to your flock. Understand common types and effective solutions to manage these infections.',
     'Egg Drop Syndrome affects egg production in hens. Learn what it means for your flock and how to manage the condition effectively.'
   ].obs;
-
-
-
 }

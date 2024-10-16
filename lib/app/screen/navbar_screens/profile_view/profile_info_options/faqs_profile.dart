@@ -1,7 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_common/get_reset.dart';
 import 'package:poultry/app/resources/assets/app_fonts.dart';
 import 'package:poultry/app/resources/components/gradient_button.dart';
 import 'package:poultry/app/resources/components/profile_background_container_image.dart';
@@ -14,87 +14,136 @@ class FaqsProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        alignment: Alignment.topCenter,
-        children: [
-          const SizedBox(
-            height: double.infinity,
-          ),
-          const InfoHeaderBackground(
-            title: 'FAQs',
-          ),
-          Positioned(
-            top: 150.h,
-            child: SizedBox(height: 700.h,
-              child: Container(
-                width: 330.w,
-                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 30.h),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.r),
-                  color: AppColors.white,
-                  boxShadow: const [
-                    BoxShadow(
-                      color: Colors.black12,
-                      spreadRadius: 3,
-                      blurRadius: 5,
-                    ),
-                  ],
-                ),
-                child: ListView(
-                  shrinkWrap: true
-                  ,
-                  children: [
-                    const CustomExpansionTile(question: 'question1', answer: 'answer1'),
-                    SizedBox(
-                      height: 13.h,
-                    ),
-                    const CustomExpansionTile(question: 'question2', answer: 'answer2'),
-                    SizedBox(
-                      height: 13.h,
-                    ),
-                    const CustomExpansionTile(question: 'question3', answer: 'answer3'),
-                    SizedBox(
-                      height: 13.h,
-                    ),
-                    const CustomExpansionTile(question: 'question4', answer: 'answer4'),
-                    SizedBox(
-                      height: 13.h,
-                    ),
-                    const CustomExpansionTile(question: 'question5', answer: 'answer5'),
-                    SizedBox(
-                      height: 13.h,
-                    ),
-                    const CustomExpansionTile(question: 'question6', answer: 'answer6'),
-                    SizedBox(
-                      height: 13.h,
-                    ),
-                    const CustomExpansionTile(question: 'question7', answer: 'answer7'),
-                    SizedBox(
-                      height: 13.h,
-                    ),
-                    const CustomExpansionTile(question: 'question8', answer: 'answer8'),
-                    SizedBox(
-                      height: 13.h,
-                    ),
-                    const CustomExpansionTile(question: 'question9', answer: 'answer8'),
-                    SizedBox(
-                      height: 13.h,
-                    ),
-                    const CustomExpansionTile(question: 'question10', answer: 'answer10'),
-                    SizedBox(
-                      height: 13.h,
-                    ),
-                    Text('stillStuck'.tr,style: TextStyle(color: AppColors.black,fontSize: 14.sp,fontWeight: FontWeight.bold,fontFamily: AppFonts.poppins),),
-                    SizedBox(height: 20.h,),
-                    GradientButton(
-                      circularRadius: 20,
-                      buttonTitle: 'sendMessage', onTap: (){} , gradientColor: AppColors.primaryGradient,)
-                  ],
-                ),
-              ),
+      backgroundColor: AppColors.white,
+      body: SafeArea(
+        child: Stack(
+          alignment: Alignment.topCenter,
+          children: [
+             ScreenBackGround(
+              title: 'FAQs',
             ),
-          ),
-        ],
+            SingleChildScrollView(
+              child: Column(
+                children: [
+                  SizedBox(height: 23.h,),
+                  Row(
+                    children: [
+                      SizedBox(width: 20.h,),
+                      IconButton(
+                          splashColor: AppColors.secondaryLightYellow.withOpacity(0.5), // Color of the splash effect
+                          highlightColor: AppColors.primaryYellow.withOpacity(0.3),    // Color when the widget is pressed
+              
+                          onPressed: (){Get.back();}, icon: Icon(
+                        CupertinoIcons.back,
+                        color: AppColors.white,
+                        size: 30,
+                      )),
+                    ],
+                  ),
+                  SizedBox(height: 72.h,),
+                  Container(
+                    height: 650.h,
+                    width: 343.w,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 20.w,
+                      vertical: 10.h
+                    ),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10.r),
+                      color: AppColors.white,
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Colors.black12,
+                          spreadRadius: 3,
+                          blurRadius: 5,
+                        ),
+                      ],
+                    ),
+                    child: ListView(
+                      shrinkWrap: true,
+                      children: [
+                        const CustomExpansionTile(
+                            question: 'question1', answer: 'answer1'),
+                        SizedBox(
+                          height: 13.h,
+                        ),
+                        const CustomExpansionTile(
+                            question: 'question2', answer: 'answer2'),
+                        SizedBox(
+                          height: 13.h,
+                        ),
+                        const CustomExpansionTile(
+                            question: 'question3', answer: 'answer3'),
+                        SizedBox(
+                          height: 13.h,
+                        ),
+                        const CustomExpansionTile(
+                            question: 'question4', answer: 'answer4'),
+                        SizedBox(
+                          height: 13.h,
+                        ),
+                        const CustomExpansionTile(
+                            question: 'question5', answer: 'answer5'),
+                        SizedBox(
+                          height: 13.h,
+                        ),
+                        const CustomExpansionTile(
+                            question: 'question6', answer: 'answer6'),
+                        SizedBox(
+                          height: 13.h,
+                        ),
+                        const CustomExpansionTile(
+                            question: 'question7', answer: 'answer7'),
+                        SizedBox(
+                          height: 13.h,
+                        ),
+                        const CustomExpansionTile(
+                            question: 'question8', answer: 'answer8'),
+                        SizedBox(
+                          height: 13.h,
+                        ),
+                        const CustomExpansionTile(
+                            question: 'question9', answer: 'answer8'),
+                        SizedBox(
+                          height: 13.h,
+                        ),
+                        const CustomExpansionTile(
+                            question: 'question10', answer: 'answer10'),
+                        SizedBox(
+                          height: 25.h,
+                        ),
+                        Row(mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'stillStuck'.tr,
+                              style: TextStyle(
+                                  color: AppColors.black,
+                                  fontSize: 14.sp,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: AppFonts.poppins),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 10.h,
+                        ),
+                        GradientButton(
+                          circularRadius: 20,
+                          buttonTitle: 'sendMessage',
+                          onTap: () {},
+                          gradientColor: AppColors.primaryGradient,
+                        ),
+                        SizedBox(
+                          height: 20.h,
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
@@ -128,9 +177,9 @@ class CustomExpansionTile extends StatelessWidget {
         question.tr,
         style: TextStyle(
           fontFamily: AppFonts.poppins,
-          color: AppColors.black,
+          color: AppColors.black.withOpacity(.5),
           fontWeight: FontWeight.w600,
-          fontSize: 14.sp,
+          fontSize: 13.sp,
         ),
       ),
       // backgroundColor: AppColors.black, // Background color of the tile

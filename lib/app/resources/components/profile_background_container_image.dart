@@ -8,40 +8,26 @@ import '../assets/app_fonts.dart';
 import '../assets/app_icons.dart';
 
 class InfoHeaderBackground extends StatelessWidget {
-  const InfoHeaderBackground({super.key, required this.title});
+  const InfoHeaderBackground({
+    super.key,
+    required this.title,
+  });
   final String title;
 
   @override
   Widget build(BuildContext context) {
     return Stack(
+      alignment: Alignment.topCenter,
       children: [
         const BackgroundContainer(),
         Positioned(
           top: 30.h,
-          left: 25.w,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              GestureDetector(
-                  onTap: () {
-                    Get.back();
-                  },
-                  child: const Icon(
-                    CupertinoIcons.back,
-                    color: AppColors.white,
-                    size: 30,
-                  )),
-              SizedBox(
-                width: 95.w,
-              ),
-              Text(
-                title.tr,
-                style: TextStyle(
-                    fontFamily: AppFonts.poppins,
-                    fontWeight: FontWeight.w600,
-                    fontSize: 20.sp),
-              ),
-            ],
+          child: Text(
+            title.tr,
+            style: TextStyle(
+                fontFamily: AppFonts.poppins,
+                fontWeight: FontWeight.w600,
+                fontSize: 20.sp),
           ),
         )
       ],
@@ -55,7 +41,7 @@ class BackgroundContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 205.h,
+      height: 195.h,
       decoration: BoxDecoration(
         gradient: LinearGradient(
             colors: AppColors.primaryGradient,
@@ -74,10 +60,14 @@ class BackgroundContainer extends StatelessWidget {
 }
 
 class ProfileBackgroundContainerImage extends StatelessWidget {
-  const ProfileBackgroundContainerImage({super.key, required this.imageUrl, required this.name, required this.mail});
-final String imageUrl;
-final String name;
-final String mail;
+  const ProfileBackgroundContainerImage(
+      {super.key,
+      required this.imageUrl,
+      required this.name,
+      required this.mail});
+  final String imageUrl;
+  final String name;
+  final String mail;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -91,7 +81,6 @@ final String mail;
               CircleAvatar(
                 backgroundColor: AppColors.blue,
                 radius: 35.r,
-
                 backgroundImage: NetworkImage(
                   imageUrl,
                 ),
@@ -122,6 +111,35 @@ final String mail;
                 ],
               )
             ],
+          ),
+        )
+      ],
+    );
+  }
+}
+
+class ScreenBackGround extends StatelessWidget {
+  const ScreenBackGround({
+    super.key,
+    required this.title,
+
+  });
+
+  final String title;
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        InfoHeaderBackground(
+          title: title,
+        ),
+        Expanded(
+          child: Container(
+            height: double.infinity,
+            width: double.infinity,
+            color: AppColors.white,
           ),
         )
       ],
