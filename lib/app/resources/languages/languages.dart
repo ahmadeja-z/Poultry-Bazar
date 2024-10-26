@@ -85,7 +85,11 @@ class Languages extends Translations {
         'madniUpdates':'Madni Updates',
         'docRates':'DOC Rates',
           'location':'Location',
-          'viewMore':'View More'
+          'viewMore':'View More',
+
+          // analysis Screen
+
+          'rate':'Rate',
         }
       };
 }

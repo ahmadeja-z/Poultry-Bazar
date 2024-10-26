@@ -10,6 +10,7 @@ import 'package:poultry/app/screen/starting_screens/onboarding_screen.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 import 'app/resources/app_colors/app_colors.dart';
+import 'app/screen/navbar_screens/analysis_view/analysis_view.dart';
 import 'app/screen/navbar_screens/dashboard_view/dashboard_view.dart';
 import 'app/screen/navbar_screens/media_view/media_tabs.dart';
 import 'app/screen/navbar_screens/media_view/tabs/blogs/blogs_explanation_media.dart';
@@ -27,8 +28,8 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setSystemUIOverlayStyle(
     SystemUiOverlayStyle(
-      statusBarColor: AppColors.secondaryLightYellow,
-      statusBarIconBrightness: Brightness.light,
+      statusBarColor: AppColors.white,
+      statusBarIconBrightness: Brightness.dark,
     ),
   );  runApp(MyApp());}
 
@@ -37,12 +38,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Set the fit size (Find your UI design, look at the dimensions of the device screen and fill it in, unit in dp)
     return ScreenUtilInit(
       designSize: const Size(390, 884),
       minTextAdapt: true,
       splitScreenMode: true,
-      // Use builder only if you need to use the library outside ScreenUtilInit context
       builder: (_, child) {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
@@ -67,7 +66,7 @@ class MyApp extends StatelessWidget {
                 //  allowFontScaling: false,
               );
 
-              return DashboardView();
+              return SplashScreen();
             },
           ),
         );

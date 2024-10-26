@@ -77,40 +77,5 @@ List<String> title=['Dashboard','Analysis','Media','Profile'];
   }
 }
 
-// Sample pages for each tab
-class DashboardPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: Text(
-        'Dashboard Page',
-        style: TextStyle(fontSize: 24, color: Colors.black),
-      ),
-    );
-  }
-}
 
-class AnalysisPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: Text(
-        'Analysis Page',
-        style: TextStyle(fontSize: 24, color: Colors.black),
-      ),
-    );
-  }
-}
-
-class MediaPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: Text(
-        'Media Page',
-        style: TextStyle(fontSize: 24, color: Colors.black),
-      ),
-    );
-  }
-}
 

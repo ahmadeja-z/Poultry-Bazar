@@ -33,7 +33,7 @@ class CustomMediaBox extends StatelessWidget {
             // height: 370.h,
             width: 350.w,
             decoration: BoxDecoration(
-              border: Border.all(color: AppColors.black),
+              border: Border.all(color: AppColors.grey),
               borderRadius: BorderRadius.circular(15.w),
             ),
             child: Column(crossAxisAlignment: CrossAxisAlignment.start,
