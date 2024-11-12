@@ -15,13 +15,15 @@ class DiseasesExplanationMedia extends StatelessWidget {
     required this.title,
     required this.description,
     required this.imageUrl,
-    required this.heroTag, // Add the heroTag parameter
+    required this.heroTag, required this.by, required this.date, // Add the heroTag parameter
   });
 
   final String title;
   final String description;
   final String imageUrl;
   final String heroTag; // Store heroTag
+  final String by;
+  final String date;
 
   @override
   Widget build(BuildContext context) {
@@ -83,9 +85,75 @@ class DiseasesExplanationMedia extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
-                height: 8.h,
+              SizedBox(height: 8.h,),
+              Row(
+                children: [
+                  Container(width: Get.width*0.17,
+                    padding: EdgeInsets.all(5),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50.r),
+                        color: AppColors.primaryYellow.withOpacity(.25)
+                    ),
+                    child: Center(child: Text('subCategory'.tr,style: TextStyle(fontWeight: FontWeight.w600,fontFamily: AppFonts.inter,color: AppColors.primaryYellow,fontSize: 7.sp),)),
+                  ),
+                ],
               ),
+              SizedBox(height: 8.h,),
+              Row(
+
+                children: [
+
+
+                  Container(
+                    height: 25.h,
+                    width: 25.w,
+                    clipBehavior: Clip.antiAlias,
+                    decoration:
+                    BoxDecoration(
+                      shape: BoxShape.circle,
+                    ),
+                    child: CachedNetworkImage(
+                      imageUrl: imageUrl,
+                      fit: BoxFit.cover,
+                      placeholder: (context, url) {
+                        return const Center(
+                          child: SpinKitCircle(
+                            color: AppColors.primaryYellow,
+                          ),
+                        );
+                      },
+                      errorWidget: (context, url, error) => const Icon(
+                        Icons.error_outline,
+                        color: Colors.red,
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 5.w,),
+                  ConstrainedBox(
+                    constraints: BoxConstraints(maxWidth: Get.width*0.18),
+                    child: Text(maxLines: 1,overflow: TextOverflow.ellipsis,
+                      by.toString(),
+                      style: TextStyle(
+                        fontSize: 9.sp,
+                        fontWeight: FontWeight.w600,
+                        color: AppColors.grey,
+                        fontFamily: AppFonts.poppins,
+                      ),
+                    ),
+                  ),
+                  Spacer(),
+                  Text(
+                    date.toString(),
+                    style: TextStyle(
+                      fontSize: 9.sp,
+                      fontWeight: FontWeight.w300,
+                      color: AppColors.grey,
+                      fontFamily: AppFonts.poppins,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 8.h,),
               ConstrainedBox(
                 constraints: BoxConstraints(
                   minWidth: Get.width * 0.8,

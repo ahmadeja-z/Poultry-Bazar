@@ -63,7 +63,8 @@ class AnalysisView extends StatelessWidget {
                               rate: dashBoardController.allCities[index].rate);
                         },
                       ),
-                    )
+                    ),
+
                   ],
                 ),
               ),

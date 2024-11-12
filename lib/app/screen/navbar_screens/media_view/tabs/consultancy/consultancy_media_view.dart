@@ -39,19 +39,22 @@ class ConsultancyMedia extends StatelessWidget {
                                 title: controller.hensTitle[index],
                                 description: controller.hensSubtitle[index],
                                 imageUrl: controller.hensImageUrl[index],
-                                heroTag: 'heroTag_$index',
+                                heroTag: 'heroTag_$index', by: blogController.hensAddedBy[index],
+                                date: blogController.hensDate[index],
                               ));
-                            },
+                            }, by: blogController.hensAddedBy[index],
+                      date: blogController.hensDate[index],
                           )
                         : CustomMediaTile(
-                      date: null,
-                            by: null,
+                      date: blogController.hensDate[index],
+                            by: blogController.hensDate[index],
                             onTileTap: () {
                               Get.to(transition: Transition.fade,ConsultancyExplanationMedia(
                                 title: controller.hensTitle[index],
                                 description: controller.hensSubtitle[index],
                                 imageUrl: controller.hensImageUrl[index],
-                                heroTag: 'heroTag_$index',
+                                heroTag: 'heroTag_$index', by:blogController.hensAddedBy[index],
+                                date: blogController.hensDate[index],
                               ));
                             },
                             title: controller.hensTitle[index],

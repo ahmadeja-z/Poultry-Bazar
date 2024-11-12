@@ -2,8 +2,10 @@
 class Assets {
   Assets._();
 
+  static const String assetsImagesLogo = 'assets/images/logo.svg';
   static const String fontsInter24ptRegular = 'assets/fonts/Inter_24pt-Regular.ttf';
   static const String fontsPoppinsRegular = 'assets/fonts/Poppins-Regular.ttf';
+  static const String iconsBell = 'assets/icons/bell.png';
   static const String iconsECommenceIcon = 'assets/icons/eCommenceIcon.png';
   static const String iconsEllipse = 'assets/icons/Ellipse.png';
   static const String iconsFlockManagementIcon = 'assets/icons/flockManagementIcon.png';

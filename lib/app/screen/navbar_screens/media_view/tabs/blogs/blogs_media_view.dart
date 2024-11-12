@@ -33,13 +33,16 @@ class BlogsMedia extends StatelessWidget {
                             title: controller.hensTitle[index],
                             description: controller.hensSubtitle[index],
                             imageUrl: controller.hensImageUrl[index],
-                            heroTag: 'heroTag_$index')); // Add heroTag
+                            heroTag: 'heroTag_$index', by: controller.hensAddedBy[index],
+                            date: controller.hensDate[index],)); // Add heroTag
                       },
-                      subTitle: controller.hensSubtitle[index],
+                      subTitle: controller.hensSubtitle[index], by:controller.hensAddedBy[index],date: controller.hensDate[index],
                     )
                         : CustomMediaTile(
                       onTileTap: () {
                         Get.to(transition: Transition.fade,BlogsExplanationMedia(
+                          date: controller.hensDate[index],
+                            by: controller.hensAddedBy[index],
                             title: controller.hensTitle[index],
                             description: controller.hensSubtitle[index],
                             imageUrl: controller.hensImageUrl[index],

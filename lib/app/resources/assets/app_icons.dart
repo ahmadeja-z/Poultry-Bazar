@@ -7,4 +7,5 @@ class AppIcons{
   static const String flockManagementIcon = 'assets/icons/flockManagementIcon.png';
   static const String eCommenceIcon = 'assets/icons/eCommenceIcon.png';
   static const String henIcon = 'assets/icons/hen.png';
+  static const String bellIcon = 'assets/icons/bell.png';
 }

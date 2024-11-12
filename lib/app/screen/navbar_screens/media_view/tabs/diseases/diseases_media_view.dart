@@ -31,8 +31,9 @@ class DiseasesMedia extends StatelessWidget {
                             onBoxTap: () {
                               Get.to(
                                   transition: Transition.fade,
-                                  DiseasesExplanationMedia(
-                                      heroTag: 'heroTag_$index',
+                                  DiseasesExplanationMedia(date: blogController.hensDate[index],
+                                      by: blogController.hensAddedBy[index],
+                                     heroTag: 'heroTag_$index',
                                       title: controller.hensTitle[index],
                                       description:
                                           controller.hensSubtitle[index],
@@ -41,7 +42,8 @@ class DiseasesMedia extends StatelessWidget {
                             },
                             title: controller.hensTitle[index],
                             imageUrl: controller.hensImageUrl[index],
-                            subTitle: controller.hensSubtitle[index],
+                            subTitle: controller.hensSubtitle[index], by: blogController.hensAddedBy[index],
+                      date: blogController.hensDate[index],
                           )
                         : CustomMediaTile(
                             onTileTap: () {
@@ -53,10 +55,10 @@ class DiseasesMedia extends StatelessWidget {
                                       description:
                                           controller.hensSubtitle[index],
                                       imageUrl:
-                                          controller.hensImageUrl[index]));
+                                          controller.hensImageUrl[index], by: blogController.hensAddedBy[index], date: blogController.hensDate[index],));
                             },
                             title: controller.hensTitle[index],
-                            description: controller.hensSubtitle[index],by: null,date: null,
+                            description: controller.hensSubtitle[index],by: blogController.hensAddedBy[index],date: blogController.hensDate[index],
                             imageUrl: controller.hensImageUrl[index]);
                   },
                 ),

@@ -84,12 +84,15 @@ class Languages extends Translations {
 //Dashboard Screen
         'madniUpdates':'Madni Updates',
         'docRates':'DOC Rates',
+        'useRates':'USE Rates',
           'location':'Location',
           'viewMore':'View More',
 
           // analysis Screen
 
           'rate':'Rate',
+          //media
+          'subCategory':'Sub Category'
         }
       };
 }

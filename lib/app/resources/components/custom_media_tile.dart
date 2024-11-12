@@ -49,14 +49,14 @@ class CustomMediaTile extends StatelessWidget {
               borderRadius: BorderRadius.circular(15.w),
             ),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Container(
                   height: Get.height * 0.2,
                   width: Get.width * 0.32,
                   clipBehavior: Clip.antiAlias,
                   decoration:
-                      BoxDecoration(borderRadius: BorderRadius.circular(15).w),
+                      BoxDecoration(borderRadius: BorderRadius.circular(15.w)),
                   child: CachedNetworkImage(
                     imageUrl: imageUrl,
                     fit: BoxFit.cover,
@@ -73,14 +73,24 @@ class CustomMediaTile extends StatelessWidget {
                     ),
                   ),
                 ),
+                Spacer(),
                 ConstrainedBox(
                   constraints: BoxConstraints(
-                      maxWidth: Get.width * 0.5, minHeight: Get.height * 0.2),
+                      maxWidth: Get.width * 0.46, minHeight: Get.height * 0.2),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+
+                      Container(width: Get.width*0.17,
+                      padding: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50.r),
+                        color: AppColors.primaryYellow.withOpacity(.25)
+                      ),
+                        child: Center(child: Text('subCategory'.tr,style: TextStyle(fontWeight: FontWeight.w600,fontFamily: AppFonts.inter,color: AppColors.primaryYellow,fontSize: 7.sp),)),
+                      ),
                       Text(
                         title,
                         style: TextStyle(
@@ -88,33 +98,10 @@ class CustomMediaTile extends StatelessWidget {
                             fontFamily: AppFonts.poppins,
                             fontSize: 11.sp,
                             color: AppColors.black),
-                        maxLines: 2,
+                        maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                       ),
-                      date != null && by != null?
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              date.toString(),
-                              style: TextStyle(
-                                fontSize: 9.sp,
-                                fontWeight: FontWeight.w300,
-                                color: AppColors.grey,
-                                fontFamily: AppFonts.poppins,
-                              ),
-                            ),
-                            Text(
-                              'By: $by',
-                              style: TextStyle(
-                                fontSize: 9.sp,
-                                fontWeight: FontWeight.w600,
-                                color: AppColors.grey,
-                                fontFamily: AppFonts.poppins,
-                              ),
-                            ),
-                          ],
-                        ):SizedBox.shrink(),
+
                       Text(
                         description,
                         style: TextStyle(
@@ -125,6 +112,62 @@ class CustomMediaTile extends StatelessWidget {
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                       ),
+                      if (date != null && by != null) Expanded(
+                        child: Row(
+
+                          children: [
+                        
+                        
+                            Container(
+                              height: Get.height * 0.08,
+                              width: Get.width * 0.05,
+                              clipBehavior: Clip.antiAlias,
+                              decoration:
+                              BoxDecoration(
+                                shape: BoxShape.circle,
+                              ),
+                              child: CachedNetworkImage(
+                                imageUrl: imageUrl,
+                                fit: BoxFit.cover,
+                                placeholder: (context, url) {
+                                  return const Center(
+                                    child: SpinKitCircle(
+                                      color: AppColors.primaryYellow,
+                                    ),
+                                  );
+                                },
+                                errorWidget: (context, url, error) => const Icon(
+                                  Icons.error_outline,
+                                  color: Colors.red,
+                                ),
+                              ),
+                            ),
+                            SizedBox(width: 5.w,),
+                            ConstrainedBox(
+                              constraints: BoxConstraints(maxWidth: Get.width*0.18),
+                              child: Text(maxLines: 1,overflow: TextOverflow.ellipsis,
+                                by.toString(),
+                                style: TextStyle(
+                                  fontSize: 9.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: AppColors.grey,
+                                  fontFamily: AppFonts.poppins,
+                                ),
+                              ),
+                            ),
+                            Spacer(),
+                            Text(
+                              date.toString(),
+                              style: TextStyle(
+                                fontSize: 9.sp,
+                                fontWeight: FontWeight.w300,
+                                color: AppColors.grey,
+                                fontFamily: AppFonts.poppins,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ) else SizedBox.shrink(),
                     ],
                   ),
                 )

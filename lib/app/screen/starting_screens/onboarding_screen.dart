@@ -78,6 +78,7 @@
 import 'dart:async'; // Import Timer for repeating the animation
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:poultry/app/resources/app_colors/app_colors.dart';
 import 'package:poultry/app/resources/assets/app_fonts.dart';
@@ -111,30 +112,29 @@ class OnboardingScreen extends StatelessWidget {
                         decoration: const BoxDecoration(shape: BoxShape.circle),
                         height: 340.h,
                         width: 340.w,
-                        child: Image.asset(
+                        padding: EdgeInsets.all(95.w),
+                        child: SvgPicture.asset(
                           AppImages.appLogo,
-                          color: const Color(0xFFFFAE42),
-                          scale: 1.1,
                         ),
                       ),
-                      const BouncingIcon(
-                        top: 55,
-                        left: 10,
+                       BouncingIcon(
+                        top: 55.h,
+                        left: 10.w,
                         icon: AppIcons.marketRatesIcon,
                       ),
-                      const BouncingIcon(
-                        top: 0,
-                        left: 85,
+                       BouncingIcon(
+                        top: 0.h,
+                        left: 80.w,
                         icon: AppIcons.posIcon,
                       ),
-                      const BouncingIcon(
-                        top: 0,
-                        right: 85,
+                       BouncingIcon(
+                        top: 0.h,
+                        right: 80.w,
                         icon: AppIcons.flockManagementIcon,
                       ),
-                      const BouncingIcon(
-                        top: 55,
-                        right: 10,
+                       BouncingIcon(
+                        top: 55.h,
+                        right: 10.w,
                         icon: AppIcons.eCommenceIcon,
                       ),
                     ],
@@ -232,7 +232,7 @@ class _BouncingIconState extends State<BouncingIcon>
     _controller.forward();
 
     // Repeat the animation every 3 seconds
-    _timer = Timer.periodic(const Duration(seconds: 3), (timer) {
+    _timer = Timer.periodic(const Duration(seconds: 100), (timer) {
       _controller.reset(); // Reset the controller
       _controller.forward(); // Start the animation again
     });
