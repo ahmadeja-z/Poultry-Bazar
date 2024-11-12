@@ -64,12 +64,14 @@ class CustomMediaTile extends StatelessWidget {
                       return const Center(
                         child: SpinKitCircle(
                           color: AppColors.primaryYellow,
+
                         ),
                       );
                     },
                     errorWidget: (context, url, error) => const Icon(
                       Icons.error_outline,
                       color: Colors.red,
+
                     ),
                   ),
                 ),
@@ -87,7 +89,7 @@ class CustomMediaTile extends StatelessWidget {
                       padding: EdgeInsets.all(5),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50.r),
-                        color: AppColors.primaryYellow.withOpacity(.25)
+                        color: AppColors.primaryYellow.withOpacity(.15)
                       ),
                         child: Center(child: Text('subCategory'.tr,style: TextStyle(fontWeight: FontWeight.w600,fontFamily: AppFonts.inter,color: AppColors.primaryYellow,fontSize: 7.sp),)),
                       ),

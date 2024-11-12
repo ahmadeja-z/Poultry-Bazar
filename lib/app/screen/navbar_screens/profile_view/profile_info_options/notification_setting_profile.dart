@@ -14,7 +14,7 @@ class NotificationSettingProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Get the instance of the NotificationController
-    final NotificationController controller = Get.put(NotificationController());
+    final NotificationSettingController controller = Get.put(NotificationSettingController());
 
     return Scaffold(
       body: SafeArea(
@@ -112,13 +112,14 @@ class CustomOptionRow extends StatelessWidget {
         Text(
           title.tr,
           style: TextStyle(
-            fontSize: 12.sp,
+            fontSize: 13.sp,
             fontFamily: AppFonts.poppins,
             fontWeight: FontWeight.w500,
             color: AppColors.grey,
           ),
         ),
         Switch(
+
           activeTrackColor: AppColors.primaryYellow,
           inactiveThumbColor: AppColors.grey,
           inactiveTrackColor: AppColors.white,

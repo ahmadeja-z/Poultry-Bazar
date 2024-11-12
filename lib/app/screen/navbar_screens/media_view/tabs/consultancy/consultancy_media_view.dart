@@ -47,7 +47,7 @@ class ConsultancyMedia extends StatelessWidget {
                           )
                         : CustomMediaTile(
                       date: blogController.hensDate[index],
-                            by: blogController.hensDate[index],
+                            by: blogController.hensAddedBy[index],
                             onTileTap: () {
                               Get.to(transition: Transition.fade,ConsultancyExplanationMedia(
                                 title: controller.hensTitle[index],

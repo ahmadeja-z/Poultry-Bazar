@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:poultry/app/resources/app_colors/app_colors.dart';
 import 'package:poultry/app/resources/assets/app_icons.dart';
 import 'package:poultry/app/resources/assets/app_images.dart';
@@ -31,7 +32,7 @@ body: Stack(
       child: Align(
           alignment:Alignment.topLeft,child: Image.asset(AppIcons.iconsEllipse,scale: 1.8,)),
     ),
-    Center(child: Image.asset(AppImages.appLogo,))
+    Center(child: SvgPicture.asset(AppImages.appLogo,))
   ],
 ),
     );

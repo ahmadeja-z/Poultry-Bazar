@@ -24,6 +24,7 @@ import 'app/screen/navbar_screens/profile_view/profile_info_options/faqs_profile
 import 'app/screen/navbar_screens/profile_view/profile_info_options/notification_setting_profile.dart';
 import 'app/screen/navbar_screens/profile_view/profile_info_options/user_profile_profile.dart';
 import 'app/screen/navbar_screens/profile_view/profile_view.dart';
+import 'app/screen/notifications/tabs_notification_screen.dart';
 import 'app/screen/starting_screens/splash_screen.dart';
 
 void main() {

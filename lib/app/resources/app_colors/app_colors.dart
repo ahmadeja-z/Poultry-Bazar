@@ -8,6 +8,7 @@ class AppColors {
   static const Color expandableBackground=Color(0xFFE2E2E280);
   static List<Color> primaryGradient=[primaryYellow,secondaryLightYellow];
 static const Color textDarkColor=Color(0xFF374151);
+static const Color textMediaSubTitleColor=Color(0xFFB6B4B4);
   // Common Colors
   static const Color white = Colors.white;
   static const Color black = Colors.black;

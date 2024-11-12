@@ -85,7 +85,7 @@ class ContactUsProfile extends StatelessWidget {
                                nextNode: controller.emailFocus.value,
                              ),
                              SizedBox(
-                               height: 10.h,
+                               height: Get.height*0.03,
                              ),
                              Text(
                                'email'.tr,
@@ -101,8 +101,8 @@ class ContactUsProfile extends StatelessWidget {
                                currentFocus: controller.emailFocus.value,
                                nextNode: controller.messageFocus.value,
                              ),
-                             const SizedBox(
-                               height: 10,
+                              SizedBox(
+                               height: Get.height*0.03,
                              ),
                              Text(
                                'yourMessage'.tr,
@@ -123,8 +123,9 @@ class ContactUsProfile extends StatelessWidget {
                                  focusNode: controller.messageFocus.value,
                                  maxLines: 7,
                                  style: TextStyle(
+
                  
-                                     fontFamily: AppFonts.poppins,
+                                     fontFamily: AppFonts.inter,
                                      color: AppColors.black,
                                      fontSize: 14.sp),
                                  controller: controller.messageController.value,
@@ -133,7 +134,7 @@ class ContactUsProfile extends StatelessWidget {
                                      hintStyle: TextStyle(
                                        fontSize: 14.sp,
                                        color: AppColors.grey,
-                                       fontFamily: AppFonts.poppins,
+                                       fontFamily: AppFonts.inter,
                                      ),
                                      contentPadding: EdgeInsets.symmetric(
                                          vertical: 10.h, horizontal: 10.w),
@@ -144,8 +145,8 @@ class ContactUsProfile extends StatelessWidget {
                                height: 30.h,
                              ),
                              GradientButton(
-                                 circularRadius: 20,
-                                 width: 300,
+                                 circularRadius: 500,
+                                 width: 320,
                                  buttonTitle: 'sendMessage',
                                  onTap: () {},
                                  gradientColor: AppColors.primaryGradient)

@@ -33,7 +33,7 @@ class CustomProfileTextField extends StatelessWidget {
         keyboardType: inputType,
         cursorColor: AppColors.primaryYellow,
         style: TextStyle(
-          fontFamily: AppFonts.poppins,
+          fontFamily: AppFonts.inter,
           color: AppColors.black,
           fontSize: 14.sp,
         ),
@@ -42,14 +42,14 @@ class CustomProfileTextField extends StatelessWidget {
           hintStyle: TextStyle(
             fontSize: 14.sp,
             color: AppColors.grey,
-            fontFamily: AppFonts.poppins,
+            fontFamily: AppFonts.inter,
           ),
           contentPadding: EdgeInsets.symmetric(vertical: 5.h, horizontal: 10.w),
           filled: true,
           fillColor: AppColors.grey.withOpacity(.2),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.r),
-            borderSide: BorderSide(color: AppColors.grey.withOpacity(.2)),
+            borderSide: BorderSide(color: Colors.transparent),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.r),

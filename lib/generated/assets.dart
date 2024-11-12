@@ -14,5 +14,9 @@ class Assets {
   static const String iconsPosIcon = 'assets/icons/posIcon.png';
   static const String imagesLogo = 'assets/images/logo.png';
   static const String imagesLogoIcon = 'assets/images/logo_icon.png';
+  static const String latoLatoBlack = 'assets/fonts/lato/Lato-Black.ttf';
+  static const String latoLatoBold = 'assets/fonts/lato/Lato-Bold.ttf';
+  static const String latoLatoLight = 'assets/fonts/lato/Lato-Light.ttf';
+  static const String latoLatoRegular = 'assets/fonts/lato/Lato-Regular.ttf';
 
 }

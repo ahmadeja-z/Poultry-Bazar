@@ -78,7 +78,7 @@ class CustomMediaBox extends StatelessWidget {
                   padding: EdgeInsets.all(5),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50.r),
-                      color: AppColors.primaryYellow.withOpacity(.25)),
+                      color: AppColors.primaryYellow.withOpacity(.15)),
                   child: Center(
                       child: Text(
                     'subCategory'.tr,

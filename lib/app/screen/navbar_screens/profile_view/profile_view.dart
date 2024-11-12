@@ -47,9 +47,10 @@ class ProfileView extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     CustomListTile(
-                        leadingIcon: const Icon(
+                        leadingIcon:  Icon(
+                          size: 25.w,
                           Icons.person_2_outlined,
-                          color: AppColors.grey,
+                          color: AppColors.grey.withOpacity(.65),
                         ),
                         text: 'userProfile',
                         onTap: () {
@@ -60,9 +61,10 @@ class ProfileView extends StatelessWidget {
                       color: AppColors.grey.withOpacity(.35),
                     ),
                     CustomListTile(
-                        leadingIcon: const Icon(
-                          CupertinoIcons.bell,
-                          color: AppColors.grey,
+                        leadingIcon:  Icon(
+                          Icons.notifications_none_rounded,
+                          size: 25.w,
+                          color: AppColors.grey.withOpacity(.65),
                         ),
                         text: 'notification',
                         onTap: () {
@@ -71,17 +73,18 @@ class ProfileView extends StatelessWidget {
                         }),
                      Divider(color: AppColors.grey.withOpacity(.35),),
                     CustomListTile(
-                        leadingIcon: const Icon(
+                        leadingIcon:  Icon(
+                          size: 25.w,
                           Icons.paid_outlined,
-                          color: AppColors.grey,
+                          color: AppColors.grey.withOpacity(.65),
                         ),
                         text: 'subscriptionPlan',
                         onTap: () {}),
                      Divider(color: AppColors.grey.withOpacity(.35),),
                     CustomListTile(
-                        leadingIcon: const Icon(
-                          Icons.quiz_outlined,
-                          color: AppColors.grey,
+                        leadingIcon:  Icon(
+                          Icons.quiz_outlined, size: 25.w,
+                          color: AppColors.grey.withOpacity(.65),
                         ),
                         text: 'faqs',
                         onTap: () {
@@ -90,9 +93,10 @@ class ProfileView extends StatelessWidget {
                         }),
                      Divider(color: AppColors.grey.withOpacity(.35),),
                     CustomListTile(
-                        leadingIcon: const Icon(
+                        leadingIcon:  Icon(
                           Icons.info_outline_rounded,
-                          color: AppColors.grey,
+                          size: 25.w,
+                          color: AppColors.grey.withOpacity(.65),
                         ),
                         text: 'aboutUs',
                         onTap: () {
@@ -101,9 +105,9 @@ class ProfileView extends StatelessWidget {
                         }),
                      Divider(color: AppColors.grey.withOpacity(.35),),
                     CustomListTile(
-                        leadingIcon: const Icon(
-                          Icons.person_3_outlined,
-                          color: AppColors.grey,
+                        leadingIcon:  Icon(
+                          Icons.person_3_outlined, size: 25.w,
+                          color: AppColors.grey.withOpacity(.65),
                         ),
                         text: 'contactUs',
                         onTap: () {
@@ -112,31 +116,33 @@ class ProfileView extends StatelessWidget {
                         }),
                      Divider(color: AppColors.grey.withOpacity(.35),),
                     CustomListTile(
-                        leadingIcon: const Icon(
+                        leadingIcon:  Icon(
+                          size: 25.w,
                           Icons.help_outline_rounded,
-                          color: AppColors.grey,
+                          color: AppColors.grey.withOpacity(.65),
                         ),
                         text: 'help',
                         onTap: () {}),
                      Divider(color: AppColors.grey.withOpacity(.35),),
                     CustomListTile(
-                        leadingIcon: const Icon(
+                        leadingIcon:  Icon(
+                          size: 25.w,
                           Icons.star_rate_outlined,
-                          color: AppColors.grey,
+                          color: AppColors.grey.withOpacity(.65),
                         ),
                         text: 'rateApp',
                         onTap: () {}),
                      Divider(color: AppColors.grey.withOpacity(.35),),
                     CustomListTile(
-                        leadingIcon: const Icon(
-                          Icons.share,
-                          color: AppColors.grey,
+                        leadingIcon:  Icon(
+                          Icons.share, size: 25.w,
+                          color: AppColors.grey.withOpacity(.65),
                         ),
                         text: 'shareApp',
                         onTap: () {}),
                      Divider(color: AppColors.grey.withOpacity(.35),),
                     CustomListTile(
-                        leadingIcon: const Icon(
+                        leadingIcon:  Icon( size: 25.w,
                           Icons.logout_rounded,
                           color: AppColors.primaryYellow,
                         ),

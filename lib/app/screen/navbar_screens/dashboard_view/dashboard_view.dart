@@ -13,6 +13,7 @@ import 'package:poultry/app/resources/components/custom_graph.dart';
 import 'package:poultry/app/resources/components/custom_media_box.dart';
 import 'package:poultry/app/resources/components/custom_option_widget.dart';
 import 'package:poultry/app/resources/components/rates_background_container.dart';
+import 'package:poultry/app/screen/notifications/tabs_notification_screen.dart';
 import 'package:poultry/app/screen_controller/dashboard_controller/dashboard_controller.dart';
 
 import '../../../resources/app_colors/app_colors.dart';
@@ -46,7 +47,13 @@ class DashboardView extends StatelessWidget {
                         Row(
                           children: [
 
-                             Image.asset(AppIcons.bellIcon ,scale: 1.7,),
+                             InkWell(
+                               onTap: (){Get.to(TabNotificationScreen(),transition: Transition.fade);},
+                                 splashColor: AppColors.secondaryLightYellow
+                                     .withOpacity(0.5), // Color of the splash effect
+                                 highlightColor: AppColors.primaryYellow
+                                     .withOpacity(0.3), // Color when the widget is pressed
+                                 child: Image.asset(AppIcons.bellIcon ,scale: 1.7,)),
                             SizedBox(width: 15.w,),
                             Container(
                               clipBehavior: Clip.antiAlias,

@@ -110,7 +110,7 @@ class FaqsProfile extends StatelessWidget {
                         const CustomExpansionTile(
                             question: 'question10', answer: 'answer10'),
                         SizedBox(
-                          height: 25.h,
+                          height: Get.height*0.03,
                         ),
                         Row(mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -128,7 +128,8 @@ class FaqsProfile extends StatelessWidget {
                           height: 10.h,
                         ),
                         GradientButton(
-                          circularRadius: 20,
+                          circularRadius: 500,
+                          width: 320,
                           buttonTitle: 'sendMessage',
                           onTap: () {},
                           gradientColor: AppColors.primaryGradient,

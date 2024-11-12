@@ -35,7 +35,7 @@ class ConsultancyExplanationMedia extends StatelessWidget {
           color: AppColors.grey,
         ),
         title: Text(
-          'Blogs',
+          'consultancyDetail'.tr,
           style: TextStyle(fontSize: 17.sp, color: AppColors.primaryYellow),
         ),
         leading: IconButton(
@@ -66,7 +66,7 @@ class ConsultancyExplanationMedia extends StatelessWidget {
                   clipBehavior: Clip.antiAlias,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15.r),
-                    border: Border.all(color: AppColors.black),
+                    // border: Border.all(color: AppColors.black),
                   ),
                   child: CachedNetworkImage(
                     imageUrl: imageUrl,
@@ -92,7 +92,7 @@ class ConsultancyExplanationMedia extends StatelessWidget {
                     padding: EdgeInsets.all(5),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50.r),
-                        color: AppColors.primaryYellow.withOpacity(.25)
+                        color: AppColors.primaryYellow.withOpacity(.15)
                     ),
                     child: Center(child: Text('subCategory'.tr,style: TextStyle(fontWeight: FontWeight.w600,fontFamily: AppFonts.inter,color: AppColors.primaryYellow,fontSize: 7.sp),)),
                   ),
@@ -175,7 +175,7 @@ class ConsultancyExplanationMedia extends StatelessWidget {
                     Text(
                       description,
                       style: TextStyle(
-                          color: AppColors.black,
+                          color: AppColors.textMediaSubTitleColor,
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w400,
                           fontFamily: AppFonts.poppins),

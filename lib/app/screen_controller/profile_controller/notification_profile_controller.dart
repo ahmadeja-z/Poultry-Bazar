@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-class NotificationController extends GetxController {
+class NotificationSettingController extends GetxController {
   // Observable list of notification settings
   var notifications = {
     'blogs': true.obs,

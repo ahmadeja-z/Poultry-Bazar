@@ -35,9 +35,10 @@ class AnalysisView extends StatelessWidget {
           child: Column(
             children: [
               SizedBox(height: 15.h,),
-              Container(padding: EdgeInsets.all(20),
+              Container(padding: EdgeInsets.only(top: 20.h,right: 20.w
+              ,left: 20.w),
                 width: 352.w,
-                height: 300.h,
+                height: 320.h,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10.r),
                     color: AppColors.grey.withOpacity(.1)),
@@ -53,7 +54,7 @@ class AnalysisView extends StatelessWidget {
                           fontSize: 19.sp),
                     ),
                     Divider(),
-                    SizedBox(height: 210.h,
+                    SizedBox(height: 205.h,
                       child: ListView.builder(
                         shrinkWrap: true,
                         itemCount: dashBoardController.allCities.length,
@@ -62,6 +63,27 @@ class AnalysisView extends StatelessWidget {
                               city: dashBoardController.allCities[index].name,
                               rate: dashBoardController.allCities[index].rate);
                         },
+                      ),
+                    ),
+
+                    Align(
+                      alignment: Alignment.bottomRight,
+                      child: Container(
+                      margin: EdgeInsets.only(top: 10.h),
+                        padding: EdgeInsets.symmetric(horizontal:15.w, vertical: 5.h),
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.grey.withOpacity(.5)),
+                          borderRadius: BorderRadius.circular(15.r),
+                        ),
+                        child: Text(
+                          'download'.tr,
+                          style: TextStyle(
+                            fontSize: 10.sp,
+                            fontFamily: AppFonts.inter,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.grey,
+                          ),
+                        ),
                       ),
                     ),
 
@@ -113,12 +135,12 @@ class AnalysisView extends StatelessWidget {
                                       width: 5.w,
                                     ),
                                     Text(
-                                      'Open Rate',
+                                      'useRate'.tr,
                                       style: TextStyle(
                                           fontWeight: FontWeight.w500,
                                           color: AppColors.darkGreen,
                                           fontFamily: AppFonts.poppins,
-                                          fontSize: 10.sp),
+                                          fontSize: 8.sp),
                                     )
                                   ],
                                 ),
@@ -139,12 +161,12 @@ class AnalysisView extends StatelessWidget {
                                       width: 5.w,
                                     ),
                                     Text(
-                                      'Close Rate',
+                                      'docRate'.tr,
                                       style: TextStyle(
                                           fontWeight: FontWeight.w500,
                                           color: AppColors.darkGreen,
                                           fontFamily: AppFonts.poppins,
-                                          fontSize: 10.sp),
+                                          fontSize: 8.sp),
                                     )
                                   ],
                                 )

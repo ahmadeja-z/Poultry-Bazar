@@ -15,7 +15,7 @@ class UserProfileProfile extends StatelessWidget {
   UserProfileProfile({super.key});
 
   final TextStyle _textStyle = TextStyle(
-    fontFamily: AppFonts.poppins,
+    fontFamily: AppFonts.Lato,
     fontWeight: FontWeight.bold,
     fontSize: 13.sp,
     color: AppColors.textDarkColor,
@@ -89,7 +89,7 @@ class UserProfileProfile extends StatelessWidget {
                           currentFocus: controller.userNameFocus.value,
                           nextNode: controller.emailFocus.value,
                         ),
-                        SizedBox(height: Get.height * 0.01),
+                        SizedBox(height: Get.height * 0.03),
                         Text('email'.tr, style: _textStyle),
                         SizedBox(height: 5.h),
                         CustomProfileTextField(
@@ -99,7 +99,7 @@ class UserProfileProfile extends StatelessWidget {
                           nextNode: controller.addressFocus.value,
                           inputType: TextInputType.emailAddress,
                         ),
-                        SizedBox(height: Get.height * 0.01),
+                        SizedBox(height: Get.height * 0.03),
                         Text('address'.tr, style: _textStyle),
                         SizedBox(height: 5.h),
                         CustomProfileTextField(
@@ -108,7 +108,7 @@ class UserProfileProfile extends StatelessWidget {
                           currentFocus: controller.addressFocus.value,
                           nextNode: controller.passwordFocus.value,
                         ),
-                        SizedBox(height: Get.height * 0.01),
+                        SizedBox(height: Get.height * 0.03),
                         Text('password'.tr, style: _textStyle),
                         SizedBox(height: 5.h),
                         CustomProfileTextField(
@@ -122,7 +122,7 @@ class UserProfileProfile extends StatelessWidget {
                           onTap: () {},
                           gradientColor: AppColors.primaryGradient,
                           width: 320,
-                          circularRadius: 20,
+                          circularRadius:500 ,
                         ),
                       ],
                     ),
