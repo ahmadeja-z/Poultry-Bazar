@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 class BlogsMediaController extends GetxController {
@@ -85,6 +86,27 @@ class BlogsMediaController extends GetxController {
   void changeLayout(){
     isGrid.value= !isGrid.value;
     print(isGrid);
+  }
+  final searchController = TextEditingController();
+  RxList<String> filteredHensTitle = <String>[].obs;
+
+
+  @override
+  void onInit() {
+    super.onInit();
+    filteredHensTitle.assignAll(hensTitle);
+
+  }
+
+  void filterResults(String query) {
+    if (query.isEmpty) {
+      // If the search query is empty, show all items
+      filteredHensTitle.assignAll(hensTitle);
+
+    } else {
+      // Filter the list based on the query
+      filteredHensTitle.assignAll(hensTitle.where((title) => title.toLowerCase().contains(query.toLowerCase())).toList());
+    }
   }
 }
 

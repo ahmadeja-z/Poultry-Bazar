@@ -40,6 +40,8 @@ class TabNotificationScreen extends StatelessWidget {
                 color: Color(0xFFEDF2F2),
                 child: TabBar(
 
+indicatorSize:TabBarIndicatorSize.tab,
+                  indicator: UnderlineTabIndicator(borderSide: BorderSide(width: 2,color: AppColors.primaryYellow)),
                   indicatorColor: AppColors.primaryYellow,
                   dividerColor: Color(0xFFEDF2F2),
                 labelStyle:TextStyle(color: AppColors.primaryYellow,fontFamily: AppFonts.poppins,fontWeight: FontWeight.w600),

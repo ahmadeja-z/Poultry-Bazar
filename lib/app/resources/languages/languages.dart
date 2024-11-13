@@ -109,6 +109,8 @@ class Languages extends Translations {
           'blogsDetail': 'Blogs Detail',
           'general': 'General',
           'recommended': 'Recommended',
+          'searchServices':'Search Services...',
+          'noItem':'No Item Present'
           //notification
 
         }

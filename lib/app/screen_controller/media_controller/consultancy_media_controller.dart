@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 class ConsultancyMediaController extends GetxController {
@@ -42,4 +43,55 @@ class ConsultancyMediaController extends GetxController {
     'Address feather pecking, aggression, and other challenges with targeted solutions from our experts.',
     'Receive customized health checkup programs for your hens, tailored to your flock’s unique needs.'
   ].obs;
+
+  // Dummy "Added By" Data
+  RxList<String> hensAddedBy = <String>[
+    'John Doe',
+    'Jane Smith',
+    'Mark Johnson',
+    'Emily Davis',
+    'Sarah Brown',
+    'Michael Miller',
+    'Linda Wilson',
+    'Paul Garcia',
+    'Laura Martinez',
+    'Kevin Anderson'
+  ].obs;
+
+  // Dummy Date Data
+  RxList<String> hensDate = <String>[
+    'October 1, 2024',
+    'October 2, 2024',
+    'October 3, 2024',
+    'October 4, 2024',
+    'October 5, 2024',
+    'October 6, 2024',
+    'October 7, 2024',
+    'October 8, 2024',
+    'October 9, 2024',
+    'October 10, 2024'
+  ].obs;
+
+  final searchController = TextEditingController();
+  RxList<String> filteredHensTitle = <String>[].obs;
+
+
+  @override
+  void onInit() {
+    super.onInit();
+    filteredHensTitle.assignAll(hensTitle);
+
+  }
+
+  void filterResults(String query) {
+    if (query.isEmpty) {
+      // If the search query is empty, show all items
+      filteredHensTitle.assignAll(hensTitle);
+
+    } else {
+      // Filter the list based on the query
+      filteredHensTitle.assignAll(hensTitle.where((title) => title.toLowerCase().contains(query.toLowerCase())).toList());
+    }
+  }
+
 }

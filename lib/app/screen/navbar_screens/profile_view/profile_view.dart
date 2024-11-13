@@ -46,20 +46,20 @@ class ProfileView extends StatelessWidget {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    CustomListTile(
-                        leadingIcon:  Icon(
-                          size: 25.w,
-                          Icons.person_2_outlined,
-                          color: AppColors.grey.withOpacity(.65),
-                        ),
-                        text: 'userProfile',
-                        onTap: () {
-                          Get.to(UserProfileProfile(),
-                              transition: Transition.fade);
-                        }),
-                     Divider(
-                      color: AppColors.grey.withOpacity(.35),
-                    ),
+                    // CustomListTile(
+                    //     leadingIcon:  Icon(
+                    //       size: 25.w,
+                    //       Icons.person_2_outlined,
+                    //       color: AppColors.grey.withOpacity(.65),
+                    //     ),
+                    //     text: 'userProfile',
+                    //     onTap: () {
+                    //       Get.to(UserProfileProfile(),
+                    //           transition: Transition.fade);
+                    //     }),
+                    //  Divider(
+                    //   color: AppColors.grey.withOpacity(.35),
+                    // ),
                     CustomListTile(
                         leadingIcon:  Icon(
                           Icons.notifications_none_rounded,
@@ -72,15 +72,15 @@ class ProfileView extends StatelessWidget {
                               transition: Transition.fade);
                         }),
                      Divider(color: AppColors.grey.withOpacity(.35),),
-                    CustomListTile(
-                        leadingIcon:  Icon(
-                          size: 25.w,
-                          Icons.paid_outlined,
-                          color: AppColors.grey.withOpacity(.65),
-                        ),
-                        text: 'subscriptionPlan',
-                        onTap: () {}),
-                     Divider(color: AppColors.grey.withOpacity(.35),),
+                    // CustomListTile(
+                    //     leadingIcon:  Icon(
+                    //       size: 25.w,
+                    //       Icons.paid_outlined,
+                    //       color: AppColors.grey.withOpacity(.65),
+                    //     ),
+                    //     text: 'subscriptionPlan',
+                    //     onTap: () {}),
+                    //  Divider(color: AppColors.grey.withOpacity(.35),),
                     CustomListTile(
                         leadingIcon:  Icon(
                           Icons.quiz_outlined, size: 25.w,
@@ -115,15 +115,15 @@ class ProfileView extends StatelessWidget {
                               transition: Transition.fade);
                         }),
                      Divider(color: AppColors.grey.withOpacity(.35),),
-                    CustomListTile(
-                        leadingIcon:  Icon(
-                          size: 25.w,
-                          Icons.help_outline_rounded,
-                          color: AppColors.grey.withOpacity(.65),
-                        ),
-                        text: 'help',
-                        onTap: () {}),
-                     Divider(color: AppColors.grey.withOpacity(.35),),
+                    // CustomListTile(
+                    //     leadingIcon:  Icon(
+                    //       size: 25.w,
+                    //       Icons.help_outline_rounded,
+                    //       color: AppColors.grey.withOpacity(.65),
+                    //     ),
+                    //     text: 'help',
+                    //     onTap: () {}),
+                    //  Divider(color: AppColors.grey.withOpacity(.35),),
                     CustomListTile(
                         leadingIcon:  Icon(
                           size: 25.w,

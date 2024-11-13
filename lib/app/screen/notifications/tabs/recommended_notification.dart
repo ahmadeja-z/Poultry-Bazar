@@ -24,7 +24,7 @@ class RecommendedNotificationView extends StatelessWidget {
               title: Text(notification.title,style: TextStyle(fontWeight: FontWeight.w700,fontFamily: AppFonts.poppins,color: AppColors.black,fontSize: 15.sp ),),
               subtitle: Text(notification.description,style: TextStyle(fontSize: 10.sp,fontFamily: AppFonts.poppins,fontWeight: FontWeight.w300),),
               trailing: Text(
-                "at ${notification.dateTime.hour}:${notification.dateTime.minute.toString().padLeft(2, '0')}, "
+                "${notification.dateTime.hour}:${notification.dateTime.minute.toString().padLeft(2, '0')}"
                 ,
                 style: TextStyle(color: Colors.grey, fontSize: 12.sp,fontFamily: AppFonts.poppins),
               ),

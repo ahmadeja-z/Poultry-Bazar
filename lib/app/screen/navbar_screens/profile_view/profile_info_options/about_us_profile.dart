@@ -118,6 +118,7 @@ class CustomText extends StatelessWidget {
           constraints: BoxConstraints(maxWidth: 310.h),
           child: Text(
             title.tr,
+            textAlign: TextAlign.justify,
             style: TextStyle(
               fontFamily: AppFonts.poppins,
               fontSize: 13.sp,
@@ -130,6 +131,7 @@ class CustomText extends StatelessWidget {
           constraints: BoxConstraints(maxWidth: 300.h),
           child: Text(
             about.tr,
+            textAlign: TextAlign.justify,
             style: TextStyle(
               color: AppColors.grey,
               fontWeight: FontWeight.bold,

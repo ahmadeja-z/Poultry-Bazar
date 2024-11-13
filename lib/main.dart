@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 import 'package:poultry/app/resources/languages/languages.dart';
 import 'package:poultry/app/resources/routes/app_routes.dart';
 import 'package:poultry/app/resources/routes/routes_name.dart';
+import 'package:poultry/app/screen/navbar_screens/media_view/tabs/consultancy/consultancy_media_view.dart';
 import 'package:poultry/practise.dart';
 import 'package:poultry/app/screen/starting_screens/onboarding_screen.dart';
 import 'package:responsive_builder/responsive_builder.dart';
@@ -31,8 +32,8 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setSystemUIOverlayStyle(
     SystemUiOverlayStyle(
-      statusBarColor: AppColors.white,
-      statusBarIconBrightness: Brightness.dark,
+      statusBarColor: AppColors.black,
+      statusBarIconBrightness: Brightness.light,
     ),
   ); 
   runApp(MyApp())

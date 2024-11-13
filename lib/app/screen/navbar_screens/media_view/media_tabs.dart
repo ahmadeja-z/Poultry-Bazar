@@ -45,7 +45,8 @@ class MediaTabs extends StatelessWidget {
             child: Column(
               children: [
                 TabBar(
-
+indicatorSize: TabBarIndicatorSize.tab,
+                  indicator: const UnderlineTabIndicator(borderSide: BorderSide(width: 2,color: AppColors.primaryYellow)),
                   labelStyle:  TextStyle(
                       fontSize: 13.sp,
                       fontFamily: AppFonts.poppins,

@@ -141,8 +141,8 @@ class CustomGraph extends StatelessWidget {
               spots: [
                 FlSpot(0, 4),
                 FlSpot(2, 9.2),
-                FlSpot(4, 8),
-                FlSpot(6, 10),
+                FlSpot(4, 6),
+                FlSpot(6, 12),
                 FlSpot(8, 6),
                 FlSpot(10, 8),
               ],
