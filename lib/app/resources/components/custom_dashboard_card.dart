@@ -29,7 +29,7 @@ class CustomCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Obx(() => Container(
-      width: 360.w,
+      width: Get.width*0.99,
       padding: EdgeInsets.all(15.r),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(18.r),
@@ -139,7 +139,7 @@ class CustomCardWidget extends StatelessWidget {
                         SizedBox(width: 8.w),
                         ConstrainedBox(
 
-                          constraints: BoxConstraints(maxWidth: 85.h),
+                          constraints: BoxConstraints(maxWidth: 74.h),
                           child: Text(
                             city.name,
 

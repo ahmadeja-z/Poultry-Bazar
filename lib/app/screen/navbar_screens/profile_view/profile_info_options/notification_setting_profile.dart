@@ -112,7 +112,7 @@ class CustomOptionRow extends StatelessWidget {
         Text(
           title.tr,
           style: TextStyle(
-            fontSize: 13.sp,
+            fontSize: 14.sp,
             fontFamily: AppFonts.poppins,
             fontWeight: FontWeight.w500,
             color: AppColors.grey,

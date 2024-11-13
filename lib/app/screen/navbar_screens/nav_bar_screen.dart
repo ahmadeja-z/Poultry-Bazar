@@ -33,39 +33,104 @@ List<String> title=['Dashboard','Analysis','Media','Profile'];
               fontWeight: FontWeight.w700),
           items: [
             BottomNavigationBarItem(backgroundColor: AppColors.white,
-              icon: const Icon(Icons.dashboard),
+              icon:  ShaderMask(
+                  shaderCallback: (Rect bounds) {
+                    return LinearGradient(
+                      colors: [AppColors.grey.withOpacity(.3), AppColors.grey.withOpacity(.6),AppColors.grey
+                      ],
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                    ).createShader(bounds);}, blendMode: BlendMode.srcIn,
+                  child: Icon(Icons.dashboard)),
               label: 'Dashboard',
-              activeIcon: Icon(
-                Icons.dashboard,
-                color: AppColors.primaryYellow,
-                size: 25.h,
+              activeIcon: ShaderMask(shaderCallback: (Rect bounds) {
+                return LinearGradient(
+                  colors: [AppColors.primaryYellow, AppColors.primaryYellow,AppColors.darkPrimaryYellow],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                ).createShader(bounds);}, blendMode: BlendMode.srcIn,
+                child: Icon(
+                  Icons.dashboard,
+
+                  size: 28.h,
+                ),
               ),
             ),
             BottomNavigationBarItem(backgroundColor: AppColors.white,
-              icon: const Icon(Icons.pie_chart),
+              icon:  ShaderMask(
+                  shaderCallback: (Rect bounds) {
+                    return LinearGradient(
+                      colors: [AppColors.grey.withOpacity(.3), AppColors.grey.withOpacity(.6),AppColors.grey
+                      ],                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                    ).createShader(bounds);}, blendMode: BlendMode.srcIn,
+                  child: Icon(Icons.pie_chart)),
               label: 'Analysis',
-              activeIcon: Icon(
-                Icons.pie_chart,
-                color: Colors.orange,
-                size: 25.h,
+              activeIcon: ShaderMask(shaderCallback: (Rect bounds) {
+                return LinearGradient(
+                  colors: [AppColors.primaryYellow, AppColors.primaryYellow,AppColors.darkPrimaryYellow],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                ).createShader(bounds);}, blendMode: BlendMode.srcIn,
+                child: Icon(
+                  Icons.pie_chart,
+
+                  size: 28.h,
+                ),
               ),
             ),
             BottomNavigationBarItem(backgroundColor: AppColors.white,
-              icon: const Icon(Icons.subscriptions_rounded),
+              icon:  ShaderMask(
+                  shaderCallback: (Rect bounds) {
+                    return LinearGradient(
+                      colors: [AppColors.grey.withOpacity(.3), AppColors.grey.withOpacity(.6),AppColors.grey
+                      ],                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                    ).createShader(bounds);}, blendMode: BlendMode.srcIn,
+                  child: Icon(Icons.subscriptions_rounded)),
               label: 'Media',
-              activeIcon: Icon(
-                Icons.subscriptions_rounded,
-                color: Colors.orange,
-                size: 28.h,
+              activeIcon: ShaderMask(shaderCallback: (Rect bounds) {
+                return LinearGradient(
+                  colors: [AppColors.primaryYellow, AppColors.primaryYellow,AppColors.darkPrimaryYellow],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                ).createShader(bounds);}, blendMode: BlendMode.srcIn,
+                child: ShaderMask(
+                  shaderCallback: (Rect bounds) {
+                    return LinearGradient(
+                      colors: [AppColors.grey.withOpacity(.3), AppColors.grey.withOpacity(.6),AppColors.grey
+                      ],                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                    ).createShader(bounds);}, blendMode: BlendMode.srcIn,
+                  child: Icon(
+                    Icons.subscriptions_rounded,
+
+                    size: 28.h,
+                  ),
+                ),
               ),
             ),
             BottomNavigationBarItem(backgroundColor: AppColors.white,
-              icon: const Icon(Icons.person),
+              icon:  ShaderMask(
+                  shaderCallback: (Rect bounds) {
+                    return LinearGradient(
+                      colors: [AppColors.grey.withOpacity(.3), AppColors.grey.withOpacity(.6),AppColors.grey
+                      ],                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                    ).createShader(bounds);}, blendMode: BlendMode.srcIn,
+                  child: Icon(Icons.person)),
               label: 'Profile',
-              activeIcon: Icon(
-                Icons.person,
-                color: Colors.orange,
-                size: 28.h,
+              activeIcon: ShaderMask(shaderCallback: (Rect bounds) {
+    return LinearGradient(
+    colors: [AppColors.primaryYellow, AppColors.primaryYellow,AppColors.darkPrimaryYellow],
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+    ).createShader(bounds);}, blendMode: BlendMode.srcIn,
+                child: Icon(
+                  Icons.person,
+
+                  size: 28.h,
+                ),
               ),
             ),
           ],

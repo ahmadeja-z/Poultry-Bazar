@@ -232,7 +232,7 @@ class _BouncingIconState extends State<BouncingIcon>
     _controller.forward();
 
     // Repeat the animation every 3 seconds
-    _timer = Timer.periodic(const Duration(seconds: 100), (timer) {
+    _timer = Timer.periodic(const Duration(seconds: 10), (timer) {
       _controller.reset(); // Reset the controller
       _controller.forward(); // Start the animation again
     });

@@ -51,7 +51,7 @@ class DiseasesExplanationMedia extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.symmetric(horizontal: 15.0,vertical: 10.0),
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -61,7 +61,7 @@ class DiseasesExplanationMedia extends StatelessWidget {
                 // transitionOnUserGestures: true,
                 tag: heroTag, // Use heroTag
                 child: Container(
-                  width: Get.width * 0.95,
+                  width: Get.width * 0.99,
                   height: Get.height * 0.44,
                   clipBehavior: Clip.antiAlias,
                   decoration: BoxDecoration(
@@ -119,12 +119,14 @@ class DiseasesExplanationMedia extends StatelessWidget {
                         return const Center(
                           child: SpinKitCircle(
                             color: AppColors.primaryYellow,
+                            size: 10,
                           ),
                         );
                       },
                       errorWidget: (context, url, error) => const Icon(
                         Icons.error_outline,
                         color: Colors.red,
+                        size: 10,
                       ),
                     ),
                   ),
@@ -156,13 +158,14 @@ class DiseasesExplanationMedia extends StatelessWidget {
               SizedBox(height: 8.h,),
               ConstrainedBox(
                 constraints: BoxConstraints(
-                  minWidth: Get.width * 0.8,
-                  maxWidth: Get.width * 0.9,
+                  // minWidth: Get.width * 0.8,
+                  maxWidth: Get.width * 0.99,
                 ),
                 child: Column(
                   children: [
                     Text(
                       title,
+                      textAlign: TextAlign.justify,
                       style: TextStyle(
                           color: AppColors.black,
                           fontSize: 17.sp,
@@ -174,6 +177,7 @@ class DiseasesExplanationMedia extends StatelessWidget {
                     ),
                     Text(
                       description,
+                      textAlign: TextAlign.justify,
                       style: TextStyle(
                           color: AppColors.black,
                           fontSize: 12.sp,
@@ -187,8 +191,8 @@ class DiseasesExplanationMedia extends StatelessWidget {
                 height: 18.h,
               ),
               GradientButton(
-                  width: 300,
-                  circularRadius: 20,
+                  width: 310,
+                  circularRadius: 500,
                   buttonTitle: 'Share',
                   onTap: () {},
                   gradientColor: AppColors.primaryGradient),

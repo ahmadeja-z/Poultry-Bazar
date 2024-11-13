@@ -31,7 +31,7 @@ final String rate;
   Widget build(BuildContext context) {
     return  Container(
       height: 91.h,
-      width: Get.width*.39,
+      width: Get.width*.38,
       margin: EdgeInsets.all(5),
       decoration: BoxDecoration(
         

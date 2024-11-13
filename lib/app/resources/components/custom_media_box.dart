@@ -131,11 +131,13 @@ class CustomMediaBox extends StatelessWidget {
                           return const Center(
                             child: SpinKitCircle(
                               color: AppColors.primaryYellow,
+                              size: 10,
                             ),
                           );
                         },
                         errorWidget: (context, url, error) => const Icon(
                           Icons.error_outline,
+                          size: 10,
                           color: Colors.red,
                         ),
                       ),

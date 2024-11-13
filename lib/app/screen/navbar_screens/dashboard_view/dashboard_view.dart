@@ -94,7 +94,7 @@ class DashboardView extends StatelessWidget {
                           controller.updateCitySelection(city),
                       onViewMore: () {},
                       cardTitle: 'madniUpdates',
-                      date: '01 October,2024',
+                      date: controller.formatDate(DateTime.now()),
                     ),
                     SizedBox(
                       height: 15.h,
@@ -106,7 +106,7 @@ class DashboardView extends StatelessWidget {
                           controller.updateDocRatesCitySelection(city),
                       onViewMore: () {},
                       cardTitle: 'docRates',
-                      date: '01 March,2024',
+                      date: controller.formatDate(DateTime.now()),
                     ),
                     SizedBox(
                       height: 15.h,
@@ -182,7 +182,7 @@ class DashboardView extends StatelessWidget {
                                             width: 3.w,
                                           ),
                                           Text(
-                                            'docRates'.tr,
+                                            'useDoc'.tr,
                                             style: TextStyle(
                                                 fontWeight: FontWeight.w500,
                                                 color: AppColors.darkGreen,
@@ -250,7 +250,7 @@ class DashboardView extends StatelessWidget {
                                 height: 15.h,
                               ),
                               Padding(
-                                padding: const EdgeInsets.symmetric(horizontal: 10),
+                                padding: const EdgeInsets.only(right: 15),
                                 child: CustomGraph(),
                               )
                             ],

@@ -50,7 +50,7 @@ class BlogsExplanationMedia extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.symmetric(horizontal: 15.0,vertical: 10),
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -60,7 +60,7 @@ class BlogsExplanationMedia extends StatelessWidget {
                 // transitionOnUserGestures: true,
                 tag: heroTag, // Use heroTag
                 child: Container(
-                  width: Get.width * 0.95,
+                  width: Get.width * 0.99,
                   height: Get.height * 0.44,
                   clipBehavior: Clip.antiAlias,
                   decoration: BoxDecoration(
@@ -117,12 +117,14 @@ class BlogsExplanationMedia extends StatelessWidget {
                     placeholder: (context, url) {
                       return const Center(
                         child: SpinKitCircle(
+                          size: 10,
                           color: AppColors.primaryYellow,
                         ),
                       );
                     },
                     errorWidget: (context, url, error) => const Icon(
                       Icons.error_outline,
+                      size: 10,
                       color: Colors.red,
                     ),
                   ),
@@ -155,13 +157,14 @@ class BlogsExplanationMedia extends StatelessWidget {
               SizedBox(height: 8.h,),
               ConstrainedBox(
                 constraints: BoxConstraints(
-                  minWidth: Get.width * 0.8,
-                  maxWidth: Get.width * 0.9,
+                  // minWidth: Get.width * 0.8,
+                  maxWidth: Get.width * 0.99,
                 ),
                 child: Column(
                   children: [
                     Text(
                       title,
+                      textAlign: TextAlign.justify,
                       style: TextStyle(
                           color: AppColors.black,
                           fontSize: 17.sp,
@@ -173,6 +176,7 @@ class BlogsExplanationMedia extends StatelessWidget {
                     ),
                     Text(
                       description,
+                      textAlign:  TextAlign.justify,
                       style: TextStyle(
                           color: AppColors.textMediaSubTitleColor,
                           fontSize: 12.sp,
@@ -186,8 +190,8 @@ class BlogsExplanationMedia extends StatelessWidget {
                 height: 18.h,
               ),
               GradientButton(
-                  width: 300,
-                  circularRadius: 20,
+                  width: 310,
+                  circularRadius: 500,
                   buttonTitle: 'Share',
                   onTap: () {},
                   gradientColor: AppColors.primaryGradient),

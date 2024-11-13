@@ -92,9 +92,10 @@ class Languages extends Translations {
           'passwordHere': 'Password Here',
           'update': 'Update',
 //Dashboard Screen
-          'madniUpdates': 'Madni Updates',
+          'madniUpdates': 'Mandi Updates',
           'docRates': 'DOC Rates',
-          'useRates': 'USE Rates',
+          'useRates': 'Rate',
+          'useDoc': 'DOC',
           'location': 'Location',
           'viewMore': 'View More',
 

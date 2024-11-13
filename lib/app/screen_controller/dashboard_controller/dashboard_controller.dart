@@ -45,7 +45,7 @@ class DashboardController extends GetxController {
   final RxList<City> docRatesAllCities = <City>[
     City(name: 'Peshawar', rate: '322.0'),
     City(name: 'Quetta', rate: '633.50'),
-    City(name: 'Sailkot', rate: '453.00'),
+    City(name: 'Sialkot', rate: '453.00'),
     City(name: 'Hyderabad', rate: '244.50'),
     City(name: 'Sukkur', rate: '54.50'),
     City(name: 'Gilgit', rate: '342.11'),
@@ -58,7 +58,7 @@ class DashboardController extends GetxController {
   final RxList<City> docRatesSelectedCities = <City>[
     City(name: 'Peshawar', rate: '322.0'),
     City(name: 'Quetta', rate: '633.50'),
-    City(name: 'Sailkot', rate: '453.00'),
+    City(name: 'Sialkot', rate: '453.00'),
     City(name: 'Hyderabad', rate: '244.50'),
   ].obs;
 final RxString selectedType=''.obs;
@@ -91,8 +91,23 @@ final RxList<String> calenderType=<String>['Year','Monthly','Week','Day'].obs;
       selectedCities.add(city);    print(selectedCities);    
     }
   }
+  String formatDate(DateTime date) {
+    // Define a list of month names for formatting
+    const List<String> months = [
+      'January', 'February', 'March', 'April', 'May', 'June',
+      'July', 'August', 'September', 'October', 'November', 'December'
+    ];
 
-  // Reusable dialog to show city selection
+    // Format the date
+    String day = date.day.toString().padLeft(2, '0'); // Ensures two-digit day
+    String month = months[date.month - 1]; // Get the month name
+    String year = date.year.toString(); // Get the year
+
+    return '$day $month, $year';
+  }
+
+
+// Reusable dialog to show city selection
   // void showCustomCitySelectionDialog({
   //   required BuildContext context,
   //   required List<City> cities,

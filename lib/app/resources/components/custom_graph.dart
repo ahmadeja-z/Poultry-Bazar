@@ -11,10 +11,9 @@ class CustomGraph extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  SizedBox(
+    return SizedBox(
       width: 360.w,
       height: 280.h,
-
       child: LineChart(
         LineChartData(
           // Titles for left and bottom axes
@@ -26,19 +25,31 @@ class CustomGraph extends StatelessWidget {
                 getTitlesWidget: (value, meta) {
                   switch (value.toInt()) {
                     case 0:
-                      return CustomTextWidget(text: 'JAN',);
+                      return CustomTextWidget(
+                        text: 'JAN',
+                      );
                     case 2:
-                      return CustomTextWidget(text: 'FAB',);
+                      return CustomTextWidget(
+                        text: 'FAB',
+                      );
                     case 4:
-                      return CustomTextWidget(text: 'MAR',);
+                      return CustomTextWidget(
+                        text: 'MAR',
+                      );
                     case 6:
-                      return CustomTextWidget(text: 'APR',);
+                      return CustomTextWidget(
+                        text: 'APR',
+                      );
                     case 8:
-                      return CustomTextWidget(text: 'MAY',);
+                      return CustomTextWidget(
+                        text: 'MAY',
+                      );
                     case 10:
-                      return CustomTextWidget(text: 'JUN'); case 12:
-                    return CustomTextWidget(text: 'JUL'); case 14:
-                    return CustomTextWidget(text: 'AUG');
+                      return CustomTextWidget(text: 'JUN');
+                    case 12:
+                      return CustomTextWidget(text: 'JUL');
+                    case 14:
+                      return CustomTextWidget(text: 'AUG');
                     default:
                       return Text('');
                   }
@@ -53,10 +64,10 @@ class CustomGraph extends StatelessWidget {
                 getTitlesWidget: (value, meta) {
                   if (value % 1 == 0) {
                     return Padding(
-                      padding: const EdgeInsets.only(left: 8.0,top: 20),
+                      padding: const EdgeInsets.only(left: 8.0, top: 20),
                       child: Text(
                         value.toInt().toString(),
-                        style:TextStyle(
+                        style: TextStyle(
                           fontFamily: AppFonts.poppins,
                           color: AppColors.darkGreen,
                           fontSize: 10.sp,
@@ -77,49 +88,41 @@ class CustomGraph extends StatelessWidget {
             ),
           ),
 
-
-
           gridData: FlGridData(show: false),
 
-
           backgroundColor: Colors.transparent,
-          extraLinesData: ExtraLinesData(
-
-              verticalLines: [
-                VerticalLine(
-                    x: 0.4,
-                    color: AppColors.grey.withOpacity(0.02),
-                    strokeWidth: 45,
-                    strokeCap: StrokeCap.butt
-                ),
-                VerticalLine(
-                    x: 2.3,
-                    color: AppColors.grey.withOpacity(0.03),
-                    strokeWidth: 45,
-                    strokeCap: StrokeCap.butt
-                ),  VerticalLine(
-                    x: 4.3,
-                    color: AppColors.grey.withOpacity(0.03),
-                    strokeWidth: 45,
-                    strokeCap: StrokeCap.butt
-                ),  VerticalLine(
-                    x: 6.3,
-                    color: AppColors.grey.withOpacity(0.03),
-                    strokeWidth: 45,
-                    strokeCap: StrokeCap.butt
-                ),  VerticalLine(
-                    x: 8.25,
-                    color: AppColors.grey.withOpacity(0.03),
-                    strokeWidth: 45,
-                    strokeCap: StrokeCap.butt
-                ),VerticalLine(
-                    x: 10,
-                    color: AppColors.grey.withOpacity(0.03),
-                    strokeWidth: 30,
-                    strokeCap: StrokeCap.butt
-                ),
-
-              ]),
+          extraLinesData: ExtraLinesData(verticalLines: [
+            VerticalLine(
+                x: 0.4,
+                color: AppColors.grey.withOpacity(0.02),
+                strokeWidth: 45.w,
+                strokeCap: StrokeCap.butt),
+            VerticalLine(
+                x: 2.3,
+                color: AppColors.grey.withOpacity(0.03),
+                strokeWidth: 45.w,
+                strokeCap: StrokeCap.butt),
+            VerticalLine(
+                x: 4.3,
+                color: AppColors.grey.withOpacity(0.03),
+                strokeWidth: 45.w,
+                strokeCap: StrokeCap.butt),
+            VerticalLine(
+                x: 6.3,
+                color: AppColors.grey.withOpacity(0.03),
+                strokeWidth: 45.w,
+                strokeCap: StrokeCap.butt),
+            VerticalLine(
+                x: 8.25,
+                color: AppColors.grey.withOpacity(0.03),
+                strokeWidth: 45.w,
+                strokeCap: StrokeCap.butt),
+            VerticalLine(
+                x: 10,
+                color: AppColors.grey.withOpacity(0.03),
+                strokeWidth: 30.w,
+                strokeCap: StrokeCap.butt),
+          ]),
 
           // Border Data
           borderData: FlBorderData(
@@ -172,29 +175,25 @@ class CustomGraph extends StatelessWidget {
     );
   }
 }
+
 class CustomTextWidget extends StatelessWidget {
   final String text;
-
 
   CustomTextWidget({
     Key? key,
     required this.text,
-
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 15,top: 15),
-      child: Text(
-          text,
-          style : TextStyle(
-            fontSize: 10.sp,
+      padding: const EdgeInsets.only(left: 15, top: 15),
+      child: Text(text,
+          style: TextStyle(
+              fontSize: 10.sp,
               fontFamily: AppFonts.poppins,
               color: AppColors.darkGreen,
-              fontWeight: FontWeight.w400
-          )
-      ),
+              fontWeight: FontWeight.w400)),
     );
   }
 }

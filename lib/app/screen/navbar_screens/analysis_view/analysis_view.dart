@@ -135,7 +135,7 @@ class AnalysisView extends StatelessWidget {
                                       width: 5.w,
                                     ),
                                     Text(
-                                      'useRate'.tr,
+                                      'useRates'.tr,
                                       style: TextStyle(
                                           fontWeight: FontWeight.w500,
                                           color: AppColors.darkGreen,
@@ -161,7 +161,7 @@ class AnalysisView extends StatelessWidget {
                                       width: 5.w,
                                     ),
                                     Text(
-                                      'docRate'.tr,
+                                      'useDoc'.tr,
                                       style: TextStyle(
                                           fontWeight: FontWeight.w500,
                                           color: AppColors.darkGreen,
@@ -216,7 +216,10 @@ class AnalysisView extends StatelessWidget {
                           ],
                         ),
                         SizedBox(height: 15.h,),
-                        CustomGraph()
+                        Padding(
+                          padding: const EdgeInsets.only(right: 15.0),
+                          child: CustomGraph(),
+                        )
                       ],
                     ),
                   );

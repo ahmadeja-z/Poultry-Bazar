@@ -32,7 +32,7 @@ body: Stack(
       child: Align(
           alignment:Alignment.topLeft,child: Image.asset(AppIcons.iconsEllipse,scale: 1.8,)),
     ),
-    Center(child: SvgPicture.asset(AppImages.appLogo,))
+    Center(child: SvgPicture.asset(AppImages.appLogo,color: AppColors.white,))
   ],
 ),
     );
