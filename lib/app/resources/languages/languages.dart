@@ -106,10 +106,10 @@ class Languages extends Translations {
           'subCategory': 'Sub Category',
           'consultancyDetail': 'Consultancy Detail',
           'diseaseDetail': 'Disease Detail',
-          'blogsDetail': 'Blogs Detail',
+          'blogsDetail': 'Blog Detail',
           'general': 'General',
           'recommended': 'Recommended',
-          'searchServices':'Search Services...',
+          'searchServices':'Search...',
           'noItem':'No Item Present'
           //notification
 

@@ -19,7 +19,7 @@ class CustomSearchTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 40.h,
-      width: 290.w,
+      width: 297.w,
       child: TextField(
         cursorColor: AppColors.primaryYellow,
         onChanged: onChanged,
@@ -31,6 +31,7 @@ class CustomSearchTextField extends StatelessWidget {
           color: AppColors.black,
         ),
         decoration: InputDecoration(
+          prefixIcon: Icon(Icons.search,color:Color(0xFF7D8FAB) ,),
           hintText: 'searchServices'.tr,
           contentPadding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 5.h),
           hintStyle: TextStyle(

@@ -86,6 +86,7 @@ class BlogsMediaController extends GetxController {
   void changeLayout(){
     isGrid.value= !isGrid.value;
     print(isGrid);
+    update();
   }
   final searchController = TextEditingController();
   RxList<String> filteredHensTitle = <String>[].obs;

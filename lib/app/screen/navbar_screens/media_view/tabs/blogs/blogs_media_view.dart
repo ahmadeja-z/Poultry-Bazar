@@ -39,9 +39,7 @@ class BlogsMedia extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
-            height: 10.h,
-          ),
+
           Expanded(child: Obx(
             () {
               if (controller.filteredHensTitle.isEmpty) {
@@ -55,52 +53,54 @@ class BlogsMedia extends StatelessWidget {
                 return ListView.builder(
                   itemCount: controller.filteredHensTitle.length,
                   itemBuilder: (context, index) {
-                    return Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: controller.isGrid.value
-                            ? CustomMediaBox(
-                                title: controller.hensTitle[index],
-                                imageUrl: controller.hensImageUrl[index],
-                                onBoxTap: () {
-                                  Get.to(
-                                      transition: Transition.fade,
-                                      BlogsExplanationMedia(
-                                        title:
-                                            controller.filteredHensTitle[index],
-                                        description:
-                                            controller.hensSubtitle[index],
-                                        imageUrl:
-                                            controller.hensImageUrl[index],
-                                        heroTag: 'heroTag_$index',
-                                        by: controller.hensAddedBy[index],
-                                        date: controller.hensDate[index],
-                                      )); // Add heroTag
-                                },
-                                subTitle: controller.hensSubtitle[index],
-                                by: controller.hensAddedBy[index],
-                                date: controller.hensDate[index],
-                              )
-                            : CustomMediaTile(
-                                onTileTap: () {
-                                  Get.to(
-                                      transition: Transition.fade,
-                                      BlogsExplanationMedia(
-                                          date: controller.hensDate[index],
-                                          by: controller.hensAddedBy[index],
-                                          title: controller.hensTitle[index],
-                                          description:
-                                              controller.hensSubtitle[index],
-                                          imageUrl:
-                                              controller.hensImageUrl[index],
-                                          heroTag:
-                                              'heroTag_$index')); // Add heroTag
-                                },
-                                title: controller.filteredHensTitle[index],
-                                description: controller.hensSubtitle[index],
-                                by: controller.hensAddedBy[index],
-                                date: controller.hensDate[index],
-                                imageUrl: controller.hensImageUrl[index],
-                              ));
+                    return Obx(() {
+                      return  Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 20),
+                          child: controller.isGrid.value
+                              ? CustomMediaBox(
+                            title: controller.hensTitle[index],
+                            imageUrl: controller.hensImageUrl[index],
+                            onBoxTap: () {
+                              Get.to(
+                                  transition: Transition.fade,
+                                  BlogsExplanationMedia(
+                                    title:
+                                    controller.filteredHensTitle[index],
+                                    description:
+                                    controller.hensSubtitle[index],
+                                    imageUrl:
+                                    controller.hensImageUrl[index],
+                                    heroTag: 'heroTag_$index',
+                                    by: controller.hensAddedBy[index],
+                                    date: controller.hensDate[index],
+                                  )); // Add heroTag
+                            },
+                            subTitle: controller.hensSubtitle[index],
+                            by: controller.hensAddedBy[index],
+                            date: controller.hensDate[index],
+                          )
+                              : CustomMediaTile(
+                            onTileTap: () {
+                              Get.to(
+                                  transition: Transition.fade,
+                                  BlogsExplanationMedia(
+                                      date: controller.hensDate[index],
+                                      by: controller.hensAddedBy[index],
+                                      title: controller.hensTitle[index],
+                                      description:
+                                      controller.hensSubtitle[index],
+                                      imageUrl:
+                                      controller.hensImageUrl[index],
+                                      heroTag:
+                                      'heroTag_$index')); // Add heroTag
+                            },
+                            title: controller.filteredHensTitle[index],
+                            description: controller.hensSubtitle[index],
+                            by: controller.hensAddedBy[index],
+                            date: controller.hensDate[index],
+                            imageUrl: controller.hensImageUrl[index],
+                          ));
+                    },);
                   },
                 );
               }

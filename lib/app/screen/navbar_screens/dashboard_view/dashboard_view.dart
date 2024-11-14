@@ -53,7 +53,7 @@ class DashboardView extends StatelessWidget {
                                      .withOpacity(0.5), // Color of the splash effect
                                  highlightColor: AppColors.primaryYellow
                                      .withOpacity(0.3), // Color when the widget is pressed
-                                 child: Image.asset(AppIcons.bellIcon ,scale: 1.7,)),
+                                 child: Image.asset(AppIcons.bellIcon ,scale: 1.9,)),
                             SizedBox(width: 15.w,),
                             Container(
                               clipBehavior: Clip.antiAlias,

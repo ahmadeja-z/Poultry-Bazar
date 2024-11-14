@@ -29,7 +29,7 @@ class City {
 
 
 class DashboardController extends GetxController {
-
+  final Rx<City?> selectedCity = Rx<City?>(null);
   final RxList<City> allCities = <City>[
     City(name: 'City 1', rate: '15.00'),
     City(name: 'City 2', rate: '18.50'),

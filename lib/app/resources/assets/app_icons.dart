@@ -8,4 +8,6 @@ class AppIcons{
   static const String eCommenceIcon = 'assets/icons/eCommenceIcon.png';
   static const String henIcon = 'assets/icons/hen.png';
   static const String bellIcon = 'assets/icons/bell.png';
+  static const String gridIcon = 'assets/icons/grid.svg';
+  static const String listIcon = 'assets/icons/list.svg';
 }

@@ -138,7 +138,7 @@ class ConsultancyExplanationMedia extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 9.sp,
                         fontWeight: FontWeight.w600,
-                        color: AppColors.grey,
+                        color: AppColors.black.withOpacity(.8),
                         fontFamily: AppFonts.poppins,
                       ),
                     ),

@@ -136,9 +136,8 @@ class DiseasesExplanationMedia extends StatelessWidget {
                     child: Text(maxLines: 1,overflow: TextOverflow.ellipsis,
                       by.toString(),
                       style: TextStyle(
-                        fontSize: 9.sp,
-                        fontWeight: FontWeight.w600,
-                        color: AppColors.grey,
+                        fontSize: 9.sp,  fontWeight: FontWeight.w600,
+                        color: AppColors.black.withOpacity(.8),
                         fontFamily: AppFonts.poppins,
                       ),
                     ),

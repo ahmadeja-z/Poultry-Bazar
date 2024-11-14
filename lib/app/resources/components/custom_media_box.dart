@@ -27,7 +27,7 @@ class CustomMediaBox extends StatelessWidget {
     return Column(
       children: [
         SizedBox(
-          height: 7.h,
+          height: Get.height * 0.015,
         ),
         InkWell(
           onTap: onBoxTap,
@@ -53,7 +53,7 @@ class CustomMediaBox extends StatelessWidget {
                   width: 330.w,
                   clipBehavior: Clip.antiAlias,
                   decoration:
-                      BoxDecoration(borderRadius: BorderRadius.circular(15).w),
+                      BoxDecoration(borderRadius: BorderRadius.circular(10).w),
                   child: CachedNetworkImage(
                     imageUrl: imageUrl,
                     fit: BoxFit.cover,

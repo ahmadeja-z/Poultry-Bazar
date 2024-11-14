@@ -23,79 +23,83 @@ class CustomCardWidget extends StatelessWidget {
     required this.allCities,
     required this.selectedCities,
     required this.onCitySelected,
-    required this.onViewMore, required this.cardTitle, required this.date,
+    required this.onViewMore,
+    required this.cardTitle,
+    required this.date,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Obx(() => Container(
-      width: Get.width*0.99,
-      padding: EdgeInsets.all(15.r),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(18.r),
-        color: AppColors.white,
-        boxShadow: [
-          BoxShadow(
-            color: AppColors.black.withOpacity(.08),
-            spreadRadius: 2,
-            offset: Offset(0, 3),
-            blurRadius: 4,
-          )
-        ],
-      ),
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                cardTitle.tr,
-                style: TextStyle(
-                  fontFamily: AppFonts.poppins,
-                  fontWeight: FontWeight.w600,
-                  fontSize: 15.sp,
-                  color: AppColors.grey.withOpacity(.6),
+    return Obx(
+      () => Container(
+        width: Get.width * 0.99,
+        padding: EdgeInsets.all(15.r),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(18.r),
+          color: AppColors.white,
+          boxShadow: [
+            BoxShadow(
+              color: AppColors.black.withOpacity(.08),
+              spreadRadius: 2,
+              offset: Offset(0, 3),
+              blurRadius: 4,
+            )
+          ],
+        ),
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  cardTitle.tr,
+                  style: TextStyle(
+                    fontFamily: AppFonts.poppins,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 15.sp,
+                    color: AppColors.grey.withOpacity(.6),
+                  ),
                 ),
-              ),
-              buildPopupMenuButton(),
-            ],
-          ),
-          SizedBox(height: 5.h),
-          Wrap(
-            children: List.generate(
-              selectedCities.length,
-                  (index) {
-                return RatesBackgroundContainer(
-                  cityName: selectedCities[index].name,
-                  rate: selectedCities[index].rate,
-                );
-              },
+                buildPopupMenuButton(),
+              ],
             ),
-          ),
-          SizedBox(height: 10.h),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                date,
-                style: TextStyle(
-                  fontFamily: AppFonts.poppins,
-                  fontSize: 12.sp,
-                  color: AppColors.grey.withOpacity(.6),
-                ),
+            SizedBox(height: 5.h),
+            Wrap(
+              children: List.generate(
+                selectedCities.length,
+                (index) {
+                  return RatesBackgroundContainer(
+                    cityName: selectedCities[index].name,
+                    rate: selectedCities[index].rate,
+                  );
+                },
               ),
-              CustomOptionWidget(title: 'View More', onTap: onViewMore),
-            ],
-          )
-        ],
+            ),
+            SizedBox(height: 10.h),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  date,
+                  style: TextStyle(
+                    fontFamily: AppFonts.poppins,
+                    fontSize: 12.sp,
+                    color: AppColors.grey.withOpacity(.6),
+                  ),
+                ),
+                CustomOptionWidget(title: 'View More', onTap: onViewMore),
+              ],
+            )
+          ],
+        ),
       ),
-    ),);
+    );
   }
 
   Widget buildPopupMenuButton() {
     return PopupMenuButton(
       constraints: BoxConstraints(maxWidth: 135.w),
-      enableFeedback: false,
+      enableFeedback: true,
       color: AppColors.white,
       shadowColor: Colors.black,
       elevation: 10,
@@ -103,62 +107,46 @@ class CustomCardWidget extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10.r),
       ),
+      onSelected: (City city) {
+        onCitySelected(city);
+      },
       itemBuilder: (BuildContext context) {
-        return [
-          PopupMenuItem(
-            enabled: false,
-            value: null,
-            child: Container(
-              width: 135.w,
-              child: ListView.separated(
-                separatorBuilder: (context, index) => const Divider(
-                  height: 4,
-                  color: Colors.transparent,
-                ),
-                shrinkWrap: true,
-                itemCount: allCities.length,
-                itemBuilder: (context, index) {
-                  City city = allCities[index];
-                  return GestureDetector(
-                    onTap: () => onCitySelected(city),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Obx(() => selectedCities.contains(city)
-                            ? Icon(
-                          Icons.check_box,
-                          size: 20.w,
-                          color: AppColors.primaryYellow,
-
-                        )
-                            : Icon(
-                          Icons.check_box_outline_blank,
-                          size: 20.w,
-                          color: AppColors.primaryYellow,
-                        )),
-                        SizedBox(width: 8.w),
-                        ConstrainedBox(
-
-                          constraints: BoxConstraints(maxWidth: 74.h),
-                          child: Text(
-                            city.name,
-
-                            style: TextStyle(
-                              fontSize: 12.sp,
-                              fontFamily: AppFonts.inter,
-                              fontWeight: FontWeight.w500,
-                              color: Colors.black,
-                            ),overflow: TextOverflow.ellipsis,
-                          ),
-                        ),
-                      ],
+        return allCities.map((City city) {
+          return PopupMenuItem<City>(
+            value: city,
+            height: 10,
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Obx(() => selectedCities.contains(city)
+                    ? Icon(
+                        Icons.check_box,
+                        size: 20.w,
+                        color: AppColors.primaryYellow,
+                      )
+                    : Icon(
+                        Icons.check_box_outline_blank,
+                        size: 20.w,
+                        color: AppColors.primaryYellow,
+                      )),
+                SizedBox(width: 8.w),
+                ConstrainedBox(
+                  constraints: BoxConstraints(maxWidth: 83.w),
+                  child: Text(
+                    city.name,
+                    style: TextStyle(
+                      fontSize: 12.sp,
+                      fontFamily: AppFonts.inter,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.black,
                     ),
-                  );
-                },
-              ),
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+              ],
             ),
-          ),
-        ];
+          );
+        }).toList();
       },
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 7.w, vertical: 3.h),

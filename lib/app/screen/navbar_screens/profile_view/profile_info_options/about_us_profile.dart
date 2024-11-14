@@ -42,7 +42,7 @@ class AboutUsProfile extends StatelessWidget {
                 Container(
                   // height: Get.height*7,
                   width: 343.w,
-                  padding: EdgeInsets.symmetric(horizontal: 20.w,vertical: 10 ),
+                  padding: EdgeInsets.symmetric(horizontal: 15.w,vertical: 15.h ),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10.r),
                     color: AppColors.white,
@@ -128,7 +128,7 @@ class CustomText extends StatelessWidget {
           ),
         ),
         ConstrainedBox(
-          constraints: BoxConstraints(maxWidth: 300.h),
+          constraints: BoxConstraints(maxWidth: 310.w),
           child: Text(
             about.tr,
             textAlign: TextAlign.justify,

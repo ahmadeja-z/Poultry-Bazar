@@ -28,7 +28,7 @@ class CustomMediaTile extends StatelessWidget {
     return Column(
       children: [
         SizedBox(
-          height: Get.height * 0.01,
+          height: Get.height * 0.015,
         ),
         InkWell(
           onTap: onTileTap,
@@ -53,10 +53,10 @@ class CustomMediaTile extends StatelessWidget {
               children: [
                 Container(
                   height: Get.height * 0.2,
-                  width: Get.width * 0.32,
+                  width: Get.width * 0.28,
                   clipBehavior: Clip.antiAlias,
                   decoration:
-                      BoxDecoration(borderRadius: BorderRadius.circular(15.w)),
+                      BoxDecoration(borderRadius: BorderRadius.circular(10.w)),
                   child: CachedNetworkImage(
                     imageUrl: imageUrl,
                     fit: BoxFit.cover,
@@ -64,34 +64,42 @@ class CustomMediaTile extends StatelessWidget {
                       return const Center(
                         child: SpinKitCircle(
                           color: AppColors.primaryYellow,
-
                         ),
                       );
                     },
                     errorWidget: (context, url, error) => const Icon(
                       Icons.error_outline,
                       color: Colors.red,
-
                     ),
                   ),
                 ),
-                Spacer(),
-                ConstrainedBox(
-                  constraints: BoxConstraints(
-                      maxWidth: Get.width * 0.46, minHeight: Get.height * 0.2),
+                SizedBox(
+                  width: Get.width * 0.03,
+                ),
+                Expanded(
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-
-                      Container(width: Get.width*0.17,
-                      padding: EdgeInsets.all(5),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50.r),
-                        color: AppColors.primaryYellow.withOpacity(.15)
+                      Container(
+                        width: Get.width * 0.17,
+                        padding: EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50.r),
+                            color: AppColors.primaryYellow.withOpacity(.15)),
+                        child: Center(
+                            child: Text(
+                          'subCategory'.tr,
+                          style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontFamily: AppFonts.inter,
+                              color: AppColors.primaryYellow,
+                              fontSize: 7.sp),
+                        )),
                       ),
-                        child: Center(child: Text('subCategory'.tr,style: TextStyle(fontWeight: FontWeight.w600,fontFamily: AppFonts.inter,color: AppColors.primaryYellow,fontSize: 7.sp),)),
+                      SizedBox(
+                        height: 5.h,
                       ),
                       Text(
                         title,
@@ -103,7 +111,6 @@ class CustomMediaTile extends StatelessWidget {
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                       ),
-
                       Text(
                         description,
                         style: TextStyle(
@@ -114,18 +121,14 @@ class CustomMediaTile extends StatelessWidget {
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                       ),
-                      if (date != null && by != null) Expanded(
+                      Expanded(
                         child: Row(
-
                           children: [
-                        
-                        
                             Container(
                               height: Get.height * 0.08,
                               width: Get.width * 0.05,
                               clipBehavior: Clip.antiAlias,
-                              decoration:
-                              BoxDecoration(
+                              decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                               ),
                               child: CachedNetworkImage(
@@ -139,22 +142,28 @@ class CustomMediaTile extends StatelessWidget {
                                     ),
                                   );
                                 },
-                                errorWidget: (context, url, error) => const Icon(
+                                errorWidget: (context, url, error) =>
+                                    const Icon(
                                   Icons.error_outline,
                                   size: 10,
                                   color: Colors.red,
                                 ),
                               ),
                             ),
-                            SizedBox(width: 5.w,),
+                            SizedBox(
+                              width: 5.w,
+                            ),
                             ConstrainedBox(
-                              constraints: BoxConstraints(maxWidth: Get.width*0.18),
-                              child: Text(maxLines: 1,overflow: TextOverflow.ellipsis,
+                              constraints:
+                                  BoxConstraints(maxWidth: Get.width * 0.18),
+                              child: Text(
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
                                 by.toString(),
                                 style: TextStyle(
                                   fontSize: 9.sp,
                                   fontWeight: FontWeight.w600,
-                                  color: AppColors.grey,
+                                  color: AppColors.black,
                                   fontFamily: AppFonts.poppins,
                                 ),
                               ),
@@ -171,7 +180,7 @@ class CustomMediaTile extends StatelessWidget {
                             ),
                           ],
                         ),
-                      ) else SizedBox.shrink(),
+                      )
                     ],
                   ),
                 )

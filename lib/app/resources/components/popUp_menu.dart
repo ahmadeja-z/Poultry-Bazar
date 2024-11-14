@@ -10,13 +10,13 @@ class CustomPopupMenuButton extends StatelessWidget {
   final List<City> allCities;
   final RxList<City> selectedCities;
   final Function(City) onCitySelected;
-
+  final Rx<City?> selectedCity = Rx<City?>(null);
   CustomPopupMenuButton({
-    Key? key,
+    super.key,
     required this.allCities,
     required this.selectedCities,
     required this.onCitySelected,
-  }) : super(key: key);
+  });
 
   Widget buildPopupMenuButton() {
     return PopupMenuButton(
@@ -31,59 +31,45 @@ class CustomPopupMenuButton extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10.r),
       ),
+      onSelected: (City city) {
+         selectedCity.value= city; // Store the selected city in the variable
+        if (!selectedCities.contains(city)) {
+          selectedCities.add(city); // Add city to selected cities if not already selected
+        }
+      },
       itemBuilder: (BuildContext context) {
-        return [
-          PopupMenuItem(
-            enabled: false,
-            value: null,
-            child: Container(
-              width: 135.w,
-              child: ListView.separated(
-                separatorBuilder: (context, index) => const Divider(
-                  height: 4,
-                  color: Colors.transparent,
-                ),
-                shrinkWrap: true,
-                itemCount: allCities.length,
-                itemBuilder: (context, index) {
-                  City city = allCities[index];
-                  return GestureDetector(
-                    onTap: () => onCitySelected(city),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Obx(() => selectedCities.contains(city)
-                            ? Icon(
-                          Icons.check_box,
-                          size: 20.w,
-                          color: AppColors.primaryYellow,
-                        )
-                            : Icon(
-                          Icons.check_box_outline_blank,
-                          size: 20.w,
-                          color: AppColors.primaryYellow,
-                        )),
-                        SizedBox(width: 8.w),
-                        ConstrainedBox(
-                          constraints: BoxConstraints(maxWidth: 85.h),
-                          child: Text(
-                            city.name,
-                            style: TextStyle(
-                              fontSize: 12.sp,
-                              fontWeight: FontWeight.w500,
-                              color: Colors.black,
-                            ),
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ),
-                      ],
-                    ),
-                  );
-                },
-              ),
-            ),
-          ),
-        ];
+       return allCities.map((City city){return PopupMenuItem<City>(
+
+         height: 10,
+         child:  Row(
+         mainAxisSize: MainAxisSize.min,
+         children: [
+           Obx(() => selectedCity.value==city
+               ? Icon(
+             Icons.check_box,
+             size: 20.w,
+             color: AppColors.primaryYellow,
+           )
+               : Icon(
+             Icons.check_box_outline_blank,
+             size: 20.w,
+             color: AppColors.primaryYellow,
+           )),
+           SizedBox(width: 8.w),
+           ConstrainedBox(
+             constraints: BoxConstraints(maxWidth: 85.h),
+             child: Text(
+               city.name,
+               style: TextStyle(
+                 fontSize: 12.sp,
+                 fontWeight: FontWeight.w500,
+                 color: Colors.black,
+               ),
+               overflow: TextOverflow.ellipsis,
+             ),
+           ),
+         ],
+       ),); }).toList();
       },
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 7.w, vertical: 3.h),

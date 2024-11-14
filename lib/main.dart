@@ -36,7 +36,7 @@ void main() {
       statusBarIconBrightness: Brightness.light,
     ),
   ); 
-  runApp(MyApp())
+   runApp(MyApp())
   // runApp(DevicePreview(
   //     enabled: !kReleaseMode,
   //     builder: (context) => MyApp(),

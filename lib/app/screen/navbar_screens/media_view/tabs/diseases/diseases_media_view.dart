@@ -38,52 +38,52 @@ class DiseasesMedia extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(
-                height: 10.h,
-              ),
+
               Expanded(
                 child:Obx(() {
                   if(controller.filteredHensTitle.isEmpty){return Center(child: Text('noItem'.tr,style: TextStyle(color: AppColors.black),),);}else{
                     return  Obx(() => ListView.builder(
                       itemCount: controller.hensTitle.length,
                       itemBuilder: (context, index) {
-                        return Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 10),
-                            child: blogController.isGrid.value
-                                ? CustomMediaBox(
-                              onBoxTap: () {
-                                Get.to(
-                                    transition: Transition.fade,
-                                    DiseasesExplanationMedia(date: controller.hensDate[index],
-                                        by: controller.hensAddedBy[index],
-                                        heroTag: 'heroTag_$index',
-                                        title: controller.hensTitle[index],
-                                        description:
-                                        controller.hensSubtitle[index],
-                                        imageUrl:
-                                        controller.hensImageUrl[index]));
-                              },
-                              title: controller.hensTitle[index],
-                              imageUrl: controller.hensImageUrl[index],
-                              subTitle: controller.hensSubtitle[index], by: controller.hensAddedBy[index],
-                              date: controller.hensDate[index],
-                            )
-                                : CustomMediaTile(
-                                onTileTap: () {
+                        return Obx(() {
+                          return Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 10),
+                              child: blogController.isGrid.value
+                                  ? CustomMediaBox(
+                                onBoxTap: () {
                                   Get.to(
                                       transition: Transition.fade,
-                                      DiseasesExplanationMedia(
-                                        heroTag: 'heroTag_$index',
-                                        title: controller.hensTitle[index],
-                                        description:
-                                        controller.hensSubtitle[index],
-                                        imageUrl:
-                                        controller.hensImageUrl[index], by: controller.hensAddedBy[index], date: controller.hensDate[index],));
+                                      DiseasesExplanationMedia(date: controller.hensDate[index],
+                                          by: controller.hensAddedBy[index],
+                                          heroTag: 'heroTag_$index',
+                                          title: controller.hensTitle[index],
+                                          description:
+                                          controller.hensSubtitle[index],
+                                          imageUrl:
+                                          controller.hensImageUrl[index]));
                                 },
                                 title: controller.hensTitle[index],
-                                description: controller.hensSubtitle[index],by: controller.hensAddedBy[index],date: controller.hensDate[index],
-                                imageUrl: controller.hensImageUrl[index])
-                        );
+                                imageUrl: controller.hensImageUrl[index],
+                                subTitle: controller.hensSubtitle[index], by: controller.hensAddedBy[index],
+                                date: controller.hensDate[index],
+                              )
+                                  : CustomMediaTile(
+                                  onTileTap: () {
+                                    Get.to(
+                                        transition: Transition.fade,
+                                        DiseasesExplanationMedia(
+                                          heroTag: 'heroTag_$index',
+                                          title: controller.hensTitle[index],
+                                          description:
+                                          controller.hensSubtitle[index],
+                                          imageUrl:
+                                          controller.hensImageUrl[index], by: controller.hensAddedBy[index], date: controller.hensDate[index],));
+                                  },
+                                  title: controller.hensTitle[index],
+                                  description: controller.hensSubtitle[index],by: controller.hensAddedBy[index],date: controller.hensDate[index],
+                                  imageUrl: controller.hensImageUrl[index])
+                          );
+                        },);
                       },
                     ),);
                   }

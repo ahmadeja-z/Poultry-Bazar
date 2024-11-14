@@ -40,51 +40,51 @@ class ConsultancyMedia extends StatelessWidget {
                 ],
               ),
             ),
-              SizedBox(
-                height: 10.h,
-              ),
+
               Expanded(
                 child: Obx(() {
                   if(controller.filteredHensTitle.isEmpty){return Center(child: Text('noItem'.tr,style: TextStyle(color: AppColors.black),),);}else{
                     return ListView.builder(
                       itemCount: controller.hensTitle.length,
                       itemBuilder: (context, index) {
-                        return Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 10),
-                            child: blogController.isGrid.value
-                                ? CustomMediaBox(
-                              title: controller.hensTitle[index],
-                              imageUrl: controller.hensImageUrl[index],
-                              subTitle: controller.hensSubtitle[index],
-                              onBoxTap: () {
-                                Get.to(
+                        return Obx(() {
+                          return Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 10),
+                              child: blogController.isGrid.value
+                                  ? CustomMediaBox(
+                                title: controller.hensTitle[index],
+                                imageUrl: controller.hensImageUrl[index],
+                                subTitle: controller.hensSubtitle[index],
+                                onBoxTap: () {
+                                  Get.to(
 
-                                    transition: Transition.fade,ConsultancyExplanationMedia(
-                                  title: controller.hensTitle[index],
-                                  description: controller.hensSubtitle[index],
-                                  imageUrl: controller.hensImageUrl[index],
-                                  heroTag: 'heroTag_$index', by: blogController.hensAddedBy[index],
-                                  date: blogController.hensDate[index],
-                                ));
-                              }, by: blogController.hensAddedBy[index],
-                              date: blogController.hensDate[index],
-                            )
-                                : CustomMediaTile(
-                                date: blogController.hensDate[index],
-                                by: blogController.hensAddedBy[index],
-                                onTileTap: () {
-                                  Get.to(transition: Transition.fade,ConsultancyExplanationMedia(
+                                      transition: Transition.fade,ConsultancyExplanationMedia(
                                     title: controller.hensTitle[index],
                                     description: controller.hensSubtitle[index],
                                     imageUrl: controller.hensImageUrl[index],
-                                    heroTag: 'heroTag_$index', by:blogController.hensAddedBy[index],
+                                    heroTag: 'heroTag_$index', by: blogController.hensAddedBy[index],
                                     date: blogController.hensDate[index],
                                   ));
-                                },
-                                title: controller.hensTitle[index],
-                                description: controller.hensSubtitle[index],
-                                imageUrl: controller.hensImageUrl[index])
-                        );
+                                }, by: blogController.hensAddedBy[index],
+                                date: blogController.hensDate[index],
+                              )
+                                  : CustomMediaTile(
+                                  date: blogController.hensDate[index],
+                                  by: blogController.hensAddedBy[index],
+                                  onTileTap: () {
+                                    Get.to(transition: Transition.fade,ConsultancyExplanationMedia(
+                                      title: controller.hensTitle[index],
+                                      description: controller.hensSubtitle[index],
+                                      imageUrl: controller.hensImageUrl[index],
+                                      heroTag: 'heroTag_$index', by:blogController.hensAddedBy[index],
+                                      date: blogController.hensDate[index],
+                                    ));
+                                  },
+                                  title: controller.hensTitle[index],
+                                  description: controller.hensSubtitle[index],
+                                  imageUrl: controller.hensImageUrl[index])
+                          );
+                        },);
                       },
                     );
                   }

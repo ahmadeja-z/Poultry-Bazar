@@ -101,7 +101,7 @@ class AnalysisView extends StatelessWidget {
                         color: AppColors.white,
                         boxShadow: [
                           BoxShadow(
-                              color: AppColors.black.withOpacity(.2),
+                              color: AppColors.black.withOpacity(.08),
                               spreadRadius: 2,
                               offset: Offset(0, 3),
                               blurRadius: 4)
