@@ -55,7 +55,7 @@ class MediaTabs extends StatelessWidget {
             )),
             title: Text(
               'Media',
-              style: TextStyle(fontSize: 17.sp, color: AppColors.primaryYellow),
+              style: TextStyle(fontSize: 17.sp, color: AppColors.primaryYellow,fontWeight: FontWeight.bold,fontFamily: AppFonts.poppins),
             ),
           ),
           body: SafeArea(

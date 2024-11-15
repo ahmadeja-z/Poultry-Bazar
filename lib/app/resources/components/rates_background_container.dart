@@ -13,7 +13,7 @@ class RatesBackgroundImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 90.h,
-      width: 165.w,
+      width: Get.width*.38,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.r),
           color: AppColors.primaryYellow.withOpacity(.25)
@@ -48,7 +48,7 @@ final String rate;
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   ConstrainedBox(
-                    constraints: BoxConstraints(maxWidth: Get.width*.34,),
+                    constraints: BoxConstraints(maxWidth: Get.width*.32,),
                     child: Text(cityName,style: TextStyle(
                       fontSize: 20.sp,
                       fontWeight: FontWeight.bold,

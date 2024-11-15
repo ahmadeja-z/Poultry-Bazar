@@ -27,9 +27,7 @@ class CustomMediaTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(
-          height: Get.height * 0.015,
-        ),
+
         InkWell(
           onTap: onTileTap,
           splashColor: AppColors.secondaryLightYellow
@@ -38,7 +36,7 @@ class CustomMediaTile extends StatelessWidget {
               .withOpacity(0.3), // Color when the widget is pressed
           borderRadius: BorderRadius.circular(15.0.w),
           child: Container(
-            padding: EdgeInsets.all(10),
+            padding: EdgeInsets.all(8),
             // margin: EdgeInsets.symmetric(
             //   vertical: 8.h,
             // ),
@@ -117,10 +115,11 @@ class CustomMediaTile extends StatelessWidget {
                             fontWeight: FontWeight.w400,
                             fontFamily: AppFonts.poppins,
                             fontSize: 8.sp,
-                            color: AppColors.black),
+                            color: AppColors.textMediaSubTitleColor),
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                       ),
+                      SizedBox(height: 5.h,),
                       Expanded(
                         child: Row(
                           children: [
@@ -174,7 +173,7 @@ class CustomMediaTile extends StatelessWidget {
                               style: TextStyle(
                                 fontSize: 9.sp,
                                 fontWeight: FontWeight.w300,
-                                color: AppColors.grey,
+                                color: AppColors.black.withOpacity(.7),
                                 fontFamily: AppFonts.poppins,
                               ),
                             ),
@@ -187,6 +186,9 @@ class CustomMediaTile extends StatelessWidget {
               ],
             ),
           ),
+        ),
+        SizedBox(
+          height: Get.height * 0.015,
         ),
       ],
     );

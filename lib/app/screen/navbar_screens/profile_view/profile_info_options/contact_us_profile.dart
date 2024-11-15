@@ -113,10 +113,10 @@ class ContactUsProfile extends StatelessWidget {
                              ),
                              Container(
                                height: 174.h,
-                               width: 295.w,
+
                                decoration: BoxDecoration(
                                  color: AppColors.grey.withOpacity(.2),
-                                 borderRadius: BorderRadius.circular(10.r),
+                                 borderRadius: BorderRadius.circular(15.r),
                                ),
                                child: TextField(
                                  cursorColor: AppColors.primaryYellow,

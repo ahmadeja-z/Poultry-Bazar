@@ -38,7 +38,9 @@ class DiseasesMedia extends StatelessWidget {
                   ],
                 ),
               ),
-
+              SizedBox(
+                height: Get.height * 0.015,
+              ),
               Expanded(
                 child:Obx(() {
                   if(controller.filteredHensTitle.isEmpty){return Center(child: Text('noItem'.tr,style: TextStyle(color: AppColors.black),),);}else{

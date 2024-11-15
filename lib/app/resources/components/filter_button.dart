@@ -20,7 +20,8 @@ class CustomInkWellButton extends StatelessWidget {
       borderRadius: BorderRadius.circular(10),
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.all(7.5.r),
+        height: 42.h,
+        width: 42.w,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           border: Border.all(
@@ -40,7 +41,7 @@ class CustomInkWellButton extends StatelessWidget {
             ).createShader(bounds);
           },
           blendMode: BlendMode.srcIn,
-          child: Icon(icon),
+          child: Center(child: Icon(icon,size: 25.w,)),
         ),
       ),
     );

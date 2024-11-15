@@ -39,6 +39,7 @@ class BlogsMedia extends StatelessWidget {
               ],
             ),
           ),
+          SizedBox(height: 15.h,),
 
           Expanded(child: Obx(
             () {

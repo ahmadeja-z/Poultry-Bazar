@@ -26,9 +26,7 @@ class CustomMediaBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(
-          height: Get.height * 0.015,
-        ),
+
         InkWell(
           onTap: onBoxTap,
           splashColor: AppColors.secondaryLightYellow
@@ -108,7 +106,7 @@ class CustomMediaBox extends StatelessWidget {
                       fontWeight: FontWeight.w400,
                       fontFamily: AppFonts.poppins,
                       fontSize: 11.sp,
-                      color: AppColors.black),
+                      color: AppColors.textMediaSubTitleColor),
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -146,7 +144,7 @@ class CustomMediaBox extends StatelessWidget {
                       width: 5.w,
                     ),
                     ConstrainedBox(
-                      constraints: BoxConstraints(maxWidth: Get.width * 0.18),
+                      constraints: BoxConstraints(maxWidth: Get.width * 0.19),
                       child: Text(
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
@@ -165,7 +163,7 @@ class CustomMediaBox extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 9.sp,
                         fontWeight: FontWeight.w300,
-                        color: AppColors.grey,
+                        color: AppColors.black.withOpacity(.7),
                         fontFamily: AppFonts.poppins,
                       ),
                     ),
@@ -174,6 +172,9 @@ class CustomMediaBox extends StatelessWidget {
               ],
             ),
           ),
+        ),
+        SizedBox(
+          height: Get.height * 0.015,
         ),
       ],
     );

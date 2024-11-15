@@ -24,10 +24,10 @@ class NotificationSettingProfile extends StatelessWidget {
            ScreenBackGround(title: 'Notification',),
            Column(
              children: [
-               SizedBox(height: 23.h,),
+               SizedBox(height: 22.h,),
                Row(
                  children: [
-                   SizedBox(width: 10.h,),
+                   SizedBox(width: 10.w,),
                    IconButton(
                        splashColor: AppColors.secondaryLightYellow.withOpacity(0.5), // Color of the splash effect
                        highlightColor: AppColors.primaryYellow.withOpacity(0.3),    // Color when the widget is pressed

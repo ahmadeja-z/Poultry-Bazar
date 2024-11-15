@@ -39,7 +39,9 @@ class ConsultancyMedia extends StatelessWidget {
                   CustomInkWellButton(onTap: () {  },icon: Icons.filter_list,)
                 ],
               ),
-            ),
+            ), SizedBox(
+                height: Get.height * 0.015,
+              ),
 
               Expanded(
                 child: Obx(() {

@@ -131,15 +131,12 @@ class DiseasesExplanationMedia extends StatelessWidget {
                     ),
                   ),
                   SizedBox(width: 5.w,),
-                  ConstrainedBox(
-                    constraints: BoxConstraints(maxWidth: Get.width*0.18),
-                    child: Text(maxLines: 1,overflow: TextOverflow.ellipsis,
-                      by.toString(),
-                      style: TextStyle(
-                        fontSize: 9.sp,  fontWeight: FontWeight.w600,
-                        color: AppColors.black.withOpacity(.8),
-                        fontFamily: AppFonts.poppins,
-                      ),
+                  Text(maxLines: 1,overflow: TextOverflow.ellipsis,
+                    by.toString(),
+                    style: TextStyle(
+                      fontSize: 9.sp,  fontWeight: FontWeight.w600,
+                      color: AppColors.black.withOpacity(.8),
+                      fontFamily: AppFonts.poppins,
                     ),
                   ),
                   Spacer(),
@@ -178,7 +175,7 @@ class DiseasesExplanationMedia extends StatelessWidget {
                       description,
                       textAlign: TextAlign.justify,
                       style: TextStyle(
-                          color: AppColors.black,
+                          color: AppColors.textMediaSubTitleColor,
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w400,
                           fontFamily: AppFonts.poppins),

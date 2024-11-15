@@ -18,7 +18,7 @@ class CustomSearchTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 40.h,
+      height: 42.h,
       width: 297.w,
       child: TextField(
         cursorColor: AppColors.primaryYellow,

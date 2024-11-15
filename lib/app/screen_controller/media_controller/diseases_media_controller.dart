@@ -18,7 +18,7 @@ class DiseasesMediaController extends GetxController {
 
   // Dummy Titles for Hens Diseases
   RxList<String> hensTitle = <String>[
-    'Avian Influenza: Understanding Symptoms and Treatment',
+    'Avian Influenza: Understanding The to make it better Symptoms and Treatment',
     'Coccidiosis in Hens: Prevention and Management Strategies',
     'Marek’s Disease: What Every Poultry Keeper Should Know',
     'Salmonella: Risks, Symptoms, and Best Practices',
